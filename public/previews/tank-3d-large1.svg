@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" width="100%" height="100%">
+	<g style="transform-box: view-box; transform-origin: 50px 50px;">
+	<g style="transform-box: view-box; transform-origin: 0px 0px;">
+	<g cursor="pointer" style="transform-box: view-box; transform-origin: 50px 50px;">
+	<g fill="none">
+		<g>
+		<path d="M92.6783 25C102.441 38.807 102.441 61.193 92.6783 75H7.32225C-2.44075 61.193 -2.44075 38.807 7.32225 25H92.6783Z" fill="#999999" />
+		<path d="M92.5017 25.25C102.167 38.919 102.167 61.081 92.5017 74.75H7.49973C-2.16527 61.081 -2.16527 38.919 7.49973 25.25H92.5017Z" fill="#808080" />
+		<path d="M92.1475 74.25C101.617 60.857 101.617 39.143 92.1475 25.75H7.85348C-1.61652 39.143 -1.61652 60.857 7.85348 74.25H92.1475Z" fill="#B2B2B2" />
+		<path d="M91.9708 74C101.344 60.745 101.344 39.255 91.9708 26H8.02877C-1.34423 39.255 -1.34423 60.745 8.02877 74H91.9708Z" fill="#000000" />
+				<clipPath id="tank-3d-large1-lvl-clip">
+						<path d="M91.9708 74C101.344 60.745 101.344 39.255 91.9708 26H8.02877C-1.34423 39.255 -1.34423 60.745 8.02877 74H91.9708Z" />
+				</clipPath>
+				<g clip-path="url(#tank-3d-large1-lvl-clip)">
+					<g transform="matrix(98,0,0,-48.25,1,74.25)">
+						<g>
+							<animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" />
+							<rect x="-0.5" y="-1" width="2" height="1.55" style="transition: height 0.8s ease;" fill="#2196F3" />
+							</g>
+						</g>
+				</g>
+		</g>
+	</g>
+	</g>
+	</g>
+	</g>
+	</svg>

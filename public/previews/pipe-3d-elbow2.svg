@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" width="100%" height="100%">
+	<g style="transform-box: view-box; transform-origin: 50px 50px;">
+	<g cursor="pointer" style="transform-box: view-box; transform-origin: 50px 50px;">
+	<g fill="none">
+		<path d="M42 54H0V46H42C44.206 46 46 44.206 46 42V0H54V42C54 48.617 48.617 54 42 54Z" fill="#999999" />
+		<path d="M42 53.5H0V46.5H42C44.481 46.5 46.5 44.481 46.5 42V0H53.5V42C53.5 48.341 48.341 53.5 42 53.5Z" fill="#666666" />
+		<path d="M42 52.5H0V47.5H42C45.033 47.5 47.5 45.033 47.5 42V0H52.5V42C52.5 47.79 47.79 52.5 42 52.5Z" fill="#CCCCCC" />
+		<path d="M42 51.75H0V48.25H42C45.446 48.25 48.25 45.446 48.25 42V0H51.75V42C51.75 47.376 47.376 51.75 42 51.75Z"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+	</g>
+	</g>
+	</g>
+	</svg>

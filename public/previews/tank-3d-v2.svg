@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" width="100%" height="100%">
+	<g style="transform-box: view-box; transform-origin: 50px 50px;">
+	<g style="transform-box: view-box; transform-origin: 0px 0px;">
+	<g cursor="pointer" style="transform-box: view-box; transform-origin: 50px 50px;">
+	<g fill="none">
+		<path d="M17.3217 85C2.31466 65.67 2.31466 34.33 17.3217 15H82.6777C97.6847 34.33 97.6847 65.67 82.6777 85H17.3217Z" fill="#999999" />
+		<path d="M58 82.5H42V100H58V82.5Z" fill="#999999" />
+		<path d="M58 0H42V17.5H58V0Z" fill="#999999" />
+		<path d="M17.8571 83H82.1431C95.1921 64.245 95.1921 35.755 82.1431 17H17.8571C4.80806 35.755 4.80806 64.245 17.8571 83Z" fill="#808080" />
+		<path d="M57 82.5H43V100H57V82.5Z" fill="#808080" />
+		<path d="M57 0H43V21.333H57V0Z" fill="#808080" />
+		<path d="M21.3218 19H18.5388C7.24879 37.056 7.24879 62.944 18.5388 81H21.3218H78.6778H81.4608C92.7508 62.944 92.7508 37.056 81.4608 19H78.6778H21.3218Z" fill="#B2B2B2" />
+		<path d="M55 76.667H45V100H55V76.667Z" fill="#B2B2B2" />
+		<path d="M55 0H45V21.5H55V0Z" fill="#B2B2B2" />
+		<path d="M53.499 74.25H46.499V100H53.499V74.25Z" fill="#000000" />
+		<path d="M53.499 0H46.499V23.25H53.499V0Z" fill="#000000" />
+		<path d="M19.4414 80H80.5583C91.0404 62.332 91.0404 37.668 80.5583 20H19.4414C8.95835 37.668 8.95835 62.332 19.4414 80Z" fill="#000000" />
+				<clipPath id="tank-3d-v2-lvl-clip">
+						<path d="M53.499 74.25H46.499V100H53.499V74.25Z" />
+						<path d="M53.499 0H46.499V23.25H53.499V0Z" />
+						<path d="M19.4414 80H80.5583C91.0404 62.332 91.0404 37.668 80.5583 20H19.4414C8.95835 37.668 8.95835 62.332 19.4414 80Z" />
+				</clipPath>
+				<g clip-path="url(#tank-3d-v2-lvl-clip)">
+					<g transform="matrix(76.84,0,0,-60.25,11.58,80.25)">
+						<g>
+							<animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" />
+							<rect x="-0.5" y="-1" width="2" height="1.55" style="transition: height 0.8s ease;" fill="#2196F3" />
+							</g>
+						</g>
+				</g>
+	</g>
+	</g>
+	</g>
+	</g>
+	</svg>

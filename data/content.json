@@ -1,0 +1,18 @@
+{
+  "updates": [
+    { "id": 1, "date": "2026-10-25", "title": "Template 2 - Tank level", "body": "12 widget tangki baru dengan level cairan, arah isi 4 arah, animasi air, skala level, dan garis batas HiHi/Hi/Lo/LoLo." },
+    { "id": 2, "date": "2026-10-25", "title": "Air mengalir ke outlet tangki", "body": "Nozzle/outlet di sisi awal pengisian sekarang ikut terisi cairan saat level di atas 0." },
+    { "id": 3, "date": "2026-10-24", "title": "Template 1 - Indikator", "body": "59 widget equipment dengan warna indikator, kedip alarm, acknowledge, warna Hi/Lo, bad quality, nama tag, nilai, dan badge Auto/Manual." },
+    { "id": 4, "date": "2026-10-24", "title": "Pipa bisa ditarik memanjang", "body": "Pipe 3D H1 sekarang memanjang saat widget ditarik, seperti Pipe Custom." }
+  ],
+  "packages": [
+    { "id": 1, "date": "2026-10-25", "name": "Tank & Level Pack", "version": "1.1", "template": "Template 2 - Tank level", "count": 12, "description": "Semua widget tangki dengan level cairan dan skala.", "category": "WTP" },
+    { "id": 2, "date": "2026-10-24", "name": "Equipment Indicator Pack", "version": "1.0", "template": "Template 1 - Indikator", "count": 59, "description": "Valve, pompa, pipa, heat exchanger, reaktor, turbin, dan instrumen.", "category": "Production" },
+    { "id": 3, "date": "2026-10-24", "name": "Piping Pack", "version": "1.0", "template": "Template 1 - Indikator", "count": 19, "description": "Pipa lurus, elbow, T-junction, flange, dan reducer.", "category": "Piping" }
+  ],
+  "news": [
+    { "id": 1, "date": "2026-10-25", "title": "SmartICS Widget Library diluncurkan", "body": "Semua widget SmartICS sekarang bisa dilihat, disimulasikan, dan diminta detailnya dari satu tempat." },
+    { "id": 2, "date": "2026-10-25", "title": "Program Partner SmartICS", "body": "Daftar sebagai partner untuk langsung mengunduh widget dan memakainya di proyek SCADA Anda." },
+    { "id": 3, "date": "2026-10-24", "title": "Simulasi widget langsung di browser", "body": "Coba ubah nilai tag, alarm, kualitas, dan properti widget sebelum mengunduh." }
+  ]
+}

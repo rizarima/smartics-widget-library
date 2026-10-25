@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" width="100%" height="100%">
+	<g style="transform-box: view-box; transform-origin: 50px 50px;">
+	<g cursor="pointer" style="transform-box: view-box; transform-origin: 50px 50px;">
+	<g fill="none"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" />
+		<path d="M29 42H25V58H29V42Z" fill="#999999" />
+		<path d="M25 55.6568V44.3428L75 47.9998V51.9998L25 55.6568Z" fill="#999999" />
+		<path d="M75 45H71V55H75V45Z" fill="#999999" />
+		<path d="M25 54.9498V45.0498L75 48.2498V51.7498L25 54.9498Z" fill="#4D4D4D" />
+		<path d="M25 53.5349V46.4639L75 48.7499V51.2499L25 53.5349Z" fill="#CCCCCC" />
+		<path d="M75 50.8754V49.1254L25 47.5254V52.4754L75 50.8754Z" fill="white" />
+	</g>
+	</g>
+	</g>
+	</svg>
