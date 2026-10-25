@@ -258,3 +258,7 @@ a.pkg:hover { background: var(--surface); box-shadow: var(--e2); text-decoration
   .search input { min-width: 0; flex: 1; }
   .form .row { grid-template-columns: 1fr; }
 }
+
+/* language switch */
+.lang.seg button { padding: 5px 9px; font-size: 12px; font-weight: 650; }
+@media (max-width: 720px) { .lang.seg button { padding: 4px 7px; } }

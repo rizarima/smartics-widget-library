@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import { getT } from '@/lib/lang';
 export default function NotFound() {
-  return <div className="card"><h1>Halaman tidak ditemukan</h1><p><Link href="/widgets">Kembali ke daftar widget</Link></p></div>;
+  const { t } = getT();
+  return <div className="card"><h1>{t('notfound.title')}</h1><p><Link href="/widgets">{t('notfound.back')}</Link></p></div>;
 }

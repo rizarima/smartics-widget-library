@@ -2,11 +2,13 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Icon from './Icon';
+import { useLang } from './LangProvider';
 
 export default function NavLinks({ admin }) {
   const path = usePathname();
-  const items = [['/', 'Dashboard', 'dashboard'], ['/widgets', 'Widget', 'widgets'], ['/berita', 'Berita', 'news'], ['/package', 'Package', 'package'], ['/update', 'Update', 'update']];
-  if (admin) items.push(['/admin', 'Admin', 'admin']);
+  const { t } = useLang();
+  const items = [['/', t('nav.dashboard'), 'dashboard'], ['/widgets', t('nav.widgets'), 'widgets'], ['/berita', t('nav.news'), 'news'], ['/package', t('nav.packages'), 'package'], ['/update', t('nav.updates'), 'update']];
+  if (admin) items.push(['/admin', t('nav.admin'), 'admin']);
   return (
     <nav className="nav">
       {items.map(([href, label, icon]) => (

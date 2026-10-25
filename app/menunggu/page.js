@@ -1,19 +1,21 @@
 import Link from 'next/link';
 import Icon from '@/components/Icon';
 import { getCurrentUser, canDownload } from '@/lib/supabase-server';
+import { getT } from '@/lib/lang';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'Menunggu persetujuan' };
+export function generateMetadata() { return { title: getT().t('pend.title') }; }
 
 export default async function Pending() {
   const user = await getCurrentUser();
   const ok = canDownload(user);
+  const { t } = getT();
   return (
     <div className="auth"><div className="card" style={{ textAlign: 'center' }}>
       <div className="auth-icon" style={{ margin: '0 auto 12px' }}><Icon name={ok ? 'check' : 'hourglass'} size={26} /></div>
-      <h1>{ok ? 'Akun Anda sudah aktif' : 'Pendaftaran diterima'}</h1>
-      <p className="muted">{ok ? 'Anda sudah bisa mengunduh semua widget.' : `Terima kasih${user ? ', ' + user.name : ''}. Admin SmartICS sedang meninjau akun partner Anda. Notifikasi akan dikirim ke WhatsApp ${user?.phone || 'Anda'} setelah disetujui.`}</p>
-      <Link href="/widgets" className="btn btn-filled">Lihat widget</Link>
+      <h1>{ok ? t('pend.activeTitle') : t('pend.title')}</h1>
+      <p className="muted">{ok ? t('pend.active') : t('pend.thanks', { name: user ? ', ' + user.name : '', phone: user?.phone || t('pend.yourPhone') })}</p>
+      <Link href="/widgets" className="btn btn-filled">{t('pend.see')}</Link>
     </div></div>
   );
 }

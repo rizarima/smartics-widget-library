@@ -5,32 +5,37 @@ import RichText from '@/components/RichText';
 import WidgetCard from '@/components/WidgetCard';
 import { getContentItem, widgetsBySlugs } from '@/lib/data';
 import { TYPES, itemTitle } from '@/lib/content-types';
-import { fmtDate } from '@/lib/site';
+import { fmtDateL } from '@/lib/i18n';
+import { localizePost, localizeWidget, templateName } from '@/lib/i18n-data';
+import { getT } from '@/lib/lang';
 
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata({ params }) {
   const t = TYPES[params.type];
   const x = t && await getContentItem(t.table, params.id);
-  return { title: x ? itemTitle(x) : 'Tidak ditemukan' };
+  const { lang, t: tr } = getT();
+  return { title: x ? itemTitle(localizePost(x, lang)) : tr('notfound.title') };
 }
 
 export default async function ContentDetail({ params }) {
   const t = TYPES[params.type];
   if (!t) notFound();
-  const x = await getContentItem(t.table, params.id);
-  if (!x) notFound();
+  const { lang, t: tr } = getT();
+  const raw = await getContentItem(t.table, params.id);
+  if (!raw) notFound();
+  const x = localizePost(raw, lang);
   const widgets = params.type === 'package' ? await widgetsBySlugs(x.widget_slugs) : [];
   return (
     <>
       <article className="article">
-        <Link href={`/${params.type}`} className="back"><Icon name="back" size={18} />Semua {t.label.toLowerCase()}</Link>
+        <Link href={`/${params.type}`} className="back"><Icon name="back" size={18} />{tr(`type.${params.type}.all`)}</Link>
         <div className="card" style={{ padding: 28 }}>
           <div className="chips" style={{ marginBottom: 10 }}>
-            <span className="chip primary"><Icon name={t.icon} size={14} />{t.label}</span>
-            <span className="chip"><Icon name="calendar" size={14} />{fmtDate(x.date)}</span>
-            {x.version && <span className="chip">Versi {x.version}</span>}
-            {x.template && <span className="chip t2">{x.template}</span>}
+            <span className="chip primary"><Icon name={t.icon} size={14} />{tr(`type.${params.type}.label`)}</span>
+            <span className="chip"><Icon name="calendar" size={14} />{fmtDateL(lang, x.date)}</span>
+            {x.version && <span className="chip">{tr('post.version', { v: x.version })}</span>}
+            {x.template && <span className="chip t2">{templateName(lang, x.template)}</span>}
           </div>
           <h1>{itemTitle(x)}</h1>
           {x.description && <p className="muted" style={{ fontSize: 17, marginTop: 0 }}>{x.description}</p>}
@@ -40,8 +45,8 @@ export default async function ContentDetail({ params }) {
       </article>
       {widgets.length > 0 && (
         <section style={{ marginTop: 28 }}>
-          <div className="section-head"><h2><Icon name="widgets" />Widget dalam package ini ({widgets.length})</h2></div>
-          <div className="wgrid">{widgets.map(w => <WidgetCard key={w.slug} w={w} />)}</div>
+          <div className="section-head"><h2><Icon name="widgets" />{tr('post.inPackage', { n: widgets.length })}</h2></div>
+          <div className="wgrid">{widgets.map(w => <WidgetCard key={w.slug} w={localizeWidget(w, lang)} lang={lang} />)}</div>
         </section>
       )}
     </>
