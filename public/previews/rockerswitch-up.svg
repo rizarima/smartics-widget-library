@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" width="100%" height="100%">
+	<g style="transform-box: view-box; transform-origin: 50px 50px;">
+	<g cursor="pointer" style="transform-box: view-box; transform-origin: 50px 50px;">
+	<g fill="none">
+		<path d="M79.0871 0.75H20.9141V98.75H79.0871V0.75Z" fill="#999999" />
+		<path d="M74.8566 4.8418H25.1406V94.6578H74.8566V4.8418Z" fill="#666666" />
+		<path opacity="0.5" d="M74.9935 94.6582H25.2775L21.1855 98.7502H79.0855L74.9935 94.6582Z" fill="#666666" />
+		<path d="M77.451 79.314H28.94L26.916 48.625H73.563L77.451 79.314Z" fill="#808080" />
+		<path d="M28.94 79.3145L26.916 91.5894H73.563L77.451 79.3145H28.94Z" fill="#808080" />
+		<path d="M73.563 7.70605H26.916V48.6251H73.563V7.70605Z" fill="#B2B2B2" stroke-miterlimit="10" stroke="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M76.9505 79.2235H29.4395V78.2235H76.3835L72.6605 48.8965L73.6525 48.7705L77.4465 78.6605C77.4645 78.8025 77.4205 78.9455 77.3255 79.0535C77.2304 79.1615 77.0945 79.2235 76.9505 79.2235Z" fill="#CCCCCC" />
+		<path d="M29.6867 78.7071L27.7656 48.6094L27.2666 48.6412L29.1877 78.7389L29.6867 78.7071Z" fill="#CCCCCC" />
+		<path d="M31.0078 46.374H70.2898" stroke-width="0.5" stroke-miterlimit="10" stroke="#CCCCCC" />
+		<path d="M70.2898 9.91113H31.0078V10.4111H70.2898V9.91113Z" fill="#CCCCCC" />
+		<path d="M29.6211 12.6162H29.1211V43.9192H29.6211V12.6162Z" fill="#CCCCCC" />
+		<path d="M71.3574 12.6162H70.8574V43.9192H71.3574V12.6162Z" fill="#CCCCCC" />
+	</g>
+	</g>
+	</g>
+	</svg>

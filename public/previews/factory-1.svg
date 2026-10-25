@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" width="100%" height="100%">
+	<g style="transform-box: view-box; transform-origin: 50px 50px;">
+	<g cursor="pointer" style="transform-box: view-box; transform-origin: 50px 50px;">
+	<g fill="none">
+		<path d="M93.745 58L91.639 3.5H85.861L83.755 58H78.875L67 48.5V58H63.438L51.563 48.5V58H48L36.125 48.5V58H32.563L20.688 48.5V58H17.125L5.25 48.5V58H0V100H100V58H93.745Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M14.5 65.5H9.5V75H14.5V65.5Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M30.1992 65.5H25.1992V75H30.1992V65.5Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M45.9004 65.5H40.9004V75H45.9004V65.5Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M61.5996 65.5H56.5996V75H61.5996V65.5Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M77.3008 65.5H72.3008V75H77.3008V65.5Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M93 65.5H88V75H93V65.5Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M32.5 100H32V83.5H10V100H9V82.5H32.5V100Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M62 100H61.5V83.5H39.5V100H38.5V82.5H62V100Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M79 100H78.5V92.5H74.5V100H73.5V91.5H79V100Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+	</g>
+	</g>
+	</g>
+	</svg>

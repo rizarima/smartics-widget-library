@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" width="100%" height="100%">
+	<g style="transform-box: view-box; transform-origin: 50px 50px;">
+	<g cursor="pointer" style="transform-box: view-box; transform-origin: 50px 50px;">
+	<g fill="none">
+		<path d="M25.5 63.6002C24.8 64.3002 23.7 64.3002 23 63.6002L19.3 60.0002C18.6 59.3002 17.3 58.8002 16.3 58.8002H1.8C0.8 58.8002 0 59.6002 0 60.6002V90.8002C0 91.8002 0.8 92.6002 1.8 92.6002H46.7C47.7 92.6002 48.5 91.8002 48.5 90.8002V60.5002C48.5 59.5002 47.7 58.7002 46.7 58.7002H32.1C31.1 58.7002 29.8 59.3002 29.1 59.9002L25.5 63.6002Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M53.3 13.7006C52.3 13.7006 51.5 14.5006 51.5 15.5006V21.8006C51.5 22.8006 52.1 24.1006 52.7 24.8006L57.2 29.3006C57.9 30.0006 57.9 31.1006 57.2 31.8006L52.7 36.3006C52 37.0006 51.5 38.3006 51.5 39.3006V45.6006C51.5 46.6006 52.3 47.4006 53.3 47.4006H98.2C99.2 47.4006 100 46.6006 100 45.6006V15.4006C100 14.4006 99.2 13.6006 98.2 13.6006H53.3V13.7006Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M25.5004 52.9002C24.8004 53.6002 23.7004 53.6002 23.0004 52.9002L1.80039 31.7002C1.10039 31.0002 1.10039 29.9002 1.80039 29.2002L23.0004 8.1002C23.7004 7.4002 24.8004 7.4002 25.5004 8.1002L46.7004 29.3002C47.4004 30.0002 47.4004 31.1002 46.7004 31.8002L25.5004 52.9002Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+	</g>
+	</g>
+	</g>
+	</svg>

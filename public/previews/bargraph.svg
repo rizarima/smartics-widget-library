@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" width="100%" height="100%">
+	<g style="transform-box: view-box; transform-origin: 50px 50px;">
+	<g cursor="pointer" style="transform-box: view-box; transform-origin: 50px 50px;">
+	<g fill="none">
+		<g>
+		<path d="M67.2996 97.0004V93.6004H16.4996V7.30039H83.4996V77.3004H86.8996C88.1996 77.3004 89.4996 77.9004 90.2996 78.7004V5.90039C90.2996 2.90039 87.7996 0.400391 84.7996 0.400391H15.0996C12.0996 0.400391 9.59961 2.90039 9.59961 5.90039V94.9004C9.59961 97.9004 12.0996 100.4 15.0996 100.4H68.6996C67.7996 99.5004 67.2996 98.3004 67.2996 97.0004Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M86.8996 82.1006H74.1996C73.0996 82.1006 72.0996 83.0006 72.0996 84.2006V97.0006" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M31.0992 60.5002C31.0992 61.2002 30.4992 61.8002 29.7992 61.8002H23.4992C22.7992 61.8002 22.1992 61.2002 22.1992 60.5002V40.0002C22.1992 39.3002 22.7992 38.7002 23.4992 38.7002H29.7992C30.4992 38.7002 31.0992 39.3002 31.0992 40.0002V60.5002Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M42.6988 60.5006C42.6988 61.2006 42.0988 61.8006 41.3988 61.8006H35.0988C34.3988 61.8006 33.7988 61.2006 33.7988 60.5006V35.9006C33.7988 35.2006 34.3988 34.6006 35.0988 34.6006H41.3988C42.0988 34.6006 42.6988 35.2006 42.6988 35.9006V60.5006Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M54.4 60.5006C54.4 61.2006 53.8 61.8006 53.1 61.8006H46.8C46.1 61.8006 45.5 61.2006 45.5 60.5006V29.4006C45.5 28.7006 46.1 28.1006 46.8 28.1006H53.1C53.8 28.1006 54.4 28.7006 54.4 29.4006V60.5006Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M66.0992 60.5006C66.0992 61.2006 65.4992 61.8006 64.7992 61.8006H58.4992C57.7992 61.8006 57.1992 61.2006 57.1992 60.5006V23.9006C57.1992 23.2006 57.7992 22.6006 58.4992 22.6006H64.7992C65.4992 22.6006 66.0992 23.2006 66.0992 23.9006V60.5006Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M77.8004 60.5002C77.8004 61.2002 77.2004 61.8002 76.5004 61.8002H70.2004C69.5004 61.8002 68.9004 61.2002 68.9004 60.5002V15.0002C68.9004 14.3002 69.5004 13.7002 70.2004 13.7002H76.5004C77.2004 13.7002 77.8004 14.3002 77.8004 15.0002V60.5002Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M78.8992 67.5H21.1992V73.9H78.8992V67.5Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		</g>
+	</g>
+	</g>
+	</g>
+	</svg>

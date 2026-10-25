@@ -29,14 +29,14 @@
 		<path d="M65.7499 81.9997H34.2499C34.0769 81.9997 33.9159 81.9097 33.8249 81.7627C33.7339 81.6157 33.7249 81.4317 33.8029 81.2767L49.5529 49.7767C49.7229 49.4377 50.2779 49.4377 50.4479 49.7767L66.1979 81.2767C66.2749 81.4317 66.2669 81.6157 66.1769 81.7627C66.0839 81.9097 65.9229 81.9997 65.7499 81.9997Z" fill="#CCCCCC" />
 		<path d="M55 0H45V15.5H55V0Z" fill="#CCCCCC" />
 		<path d="M34.2506 18H65.7506C65.9236 18 66.0846 18.09 66.1756 18.237C66.2666 18.384 66.2756 18.568 66.1976 18.723L50.4476 50.223C50.2776 50.562 49.7226 50.562 49.5526 50.223L33.8026 18.723C33.7256 18.568 33.7336 18.384 33.8236 18.237C33.9166 18.09 34.0776 18 34.2506 18Z" fill="#CCCCCC" />
-		<path d="M64.9406 19H35.0586L49.9996 48.882L64.9406 19Z"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M64.9406 19H35.0586L49.9996 48.882L64.9406 19Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
 		<path d="M53.5 0H46.5V15.5H53.5V0Z" fill="#F2F2F2" />
 		<path d="M15.5 46.5H0V53.5H15.5V46.5Z" fill="#F2F2F2" />
-		<path d="M19 35.0586V64.9406L48.882 49.9996L19 35.0586Z"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
-		<path d="M35.0586 81.0002H64.9406L49.9996 51.1182L35.0586 81.0002Z"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M19 35.0586V64.9406L48.882 49.9996L19 35.0586Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M35.0586 81.0002H64.9406L49.9996 51.1182L35.0586 81.0002Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
 		<path d="M53.5 84.5H46.5V100H53.5V84.5Z" fill="#F2F2F2" />
 		<path d="M100 46.5H84.5V53.5H100V46.5Z" fill="#F2F2F2" />
-		<path d="M51.1172 49.9996L80.9992 64.9406V35.0586L51.1172 49.9996Z"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M51.1172 49.9996L80.9992 64.9406V35.0586L51.1172 49.9996Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
 		</g>
 	</g>
 	</g>

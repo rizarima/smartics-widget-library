@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" width="100%" height="100%">
+	<g style="transform-box: view-box; transform-origin: 50px 50px;">
+	<g cursor="pointer" style="transform-box: view-box; transform-origin: 50px 50px;">
+	<g fill="none">
+		<path d="M76.2283 50L64.7413 38.513V50H62.4723L50.9853 38.513V50H43.0963L41.9853 0H33.8773L32.7663 50H27.5553L26.4443 0H18.3363L17.2253 50H10.9043V100H88.9783V50H76.2283Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M14.791 64.3528H13.791V56.7578H20.373V57.7578H14.791V64.3528Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M24.123 64.3528H23.123V56.7578H29.705V57.7578H24.123V64.3528Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M33.457 64.3528H32.457V56.7578H39.038V57.7578H33.457V64.3528Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M42.7891 64.3528H41.7891V56.7578H48.3701V57.7578H42.7891V64.3528Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M52.123 64.3528H51.123V56.7578H57.704V57.7578H52.123V64.3528Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M61.4551 64.3528H60.4551V56.7578H67.0361V57.7578H61.4551V64.3528Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M70.7871 64.3528H69.7871V56.7578H76.3681V57.7578H70.7871V64.3528Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M80.1211 64.3528H79.1211V56.7578H85.7021V57.7578H80.1211V64.3528Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M14.791 79.218H13.791V71.623H20.373V72.623H14.791V79.218Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M24.123 79.218H23.123V71.623H29.705V72.623H24.123V79.218Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M33.457 79.218H32.457V71.623H39.038V72.623H33.457V79.218Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M42.7891 79.218H41.7891V71.623H48.3701V72.623H42.7891V79.218Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M52.123 79.218H51.123V71.623H57.704V72.623H52.123V79.218Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M61.4551 79.218H60.4551V71.623H67.0361V72.623H61.4551V79.218Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M70.7871 79.218H69.7871V71.623H76.3681V72.623H70.7871V79.218Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M80.1211 79.218H79.1211V71.623H85.7021V72.623H80.1211V79.218Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+	</g>
+	</g>
+	</g>
+	</svg>

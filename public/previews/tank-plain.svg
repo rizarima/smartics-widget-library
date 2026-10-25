@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" width="100%" height="100%">
+	<g style="transform-box: view-box; transform-origin: 50px 50px;">
+	<g style="transform-box: view-box; transform-origin: 0px 0px;">
+	<g cursor="pointer" style="transform-box: view-box; transform-origin: 50px 50px;">
+	<g fill="none">
+		<path d="M2 28.3252C2 22.8022 23.49 18.3252 50 18.3252C76.51 18.3252 98 22.8022 98 28.3252V70.9242C98 76.4472 76.51 80.9242 50 80.9242C23.49 80.9242 2 76.4472 2 70.9242V28.3252Z" fill="#000000" fill-opacity="0.5" />
+		<path d="M50 38.3252C23.49 38.3252 2 33.8482 2 28.3252V70.9242C2 76.4472 23.49 80.9242 50 80.9242C76.51 80.9242 98 76.4472 98 70.9242V28.3252C98 33.8482 76.51 38.3252 50 38.3252Z" fill="#000000" fill-opacity="0.5" />
+				<clipPath id="tank-plain-lvl-clip">
+						<path d="M2 28.3252C2 22.8022 23.49 18.3252 50 18.3252C76.51 18.3252 98 22.8022 98 28.3252V70.9242C98 76.4472 76.51 80.9242 50 80.9242C23.49 80.9242 2 76.4472 2 70.9242V28.3252Z" />
+						<path d="M50 38.3252C23.49 38.3252 2 33.8482 2 28.3252V70.9242C2 76.4472 23.49 80.9242 50 80.9242C76.51 80.9242 98 76.4472 98 70.9242V28.3252C98 33.8482 76.51 38.3252 50 38.3252Z" />
+				</clipPath>
+				<g clip-path="url(#tank-plain-lvl-clip)">
+					<g transform="matrix(96,0,0,-62.25,2,80.83)">
+						<g fill="#000000">
+							<animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" />
+							<rect x="-0.5" y="-1" width="2" height="1.55" style="transition: height 0.8s ease;" fill="#2196F3" />
+							</g>
+						</g>
+				</g>
+		<path d="M50 38.3252C76.5097 38.3252 98 33.848 98 28.3252C98 22.8023 76.5097 18.3252 50 18.3252C23.4903 18.3252 2 22.8023 2 28.3252C2 33.848 23.4903 38.3252 50 38.3252Z" fill="#000000" fill-opacity="0.5" />
+	</g>
+	</g>
+	</g>
+	</g>
+	</svg>

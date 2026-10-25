@@ -1,17 +1,17 @@
 import { NextResponse } from 'next/server';
 import { getWidget } from '@/lib/data';
-import { supabaseServer } from '@/lib/supabase-server';
+import { supabaseServer, getCurrentUser, canDownload } from '@/lib/supabase-server';
 
 export const dynamic = 'force-dynamic';
 
-// members and partners only
+// members, admins and approved partners only
 export async function GET(req, { params }) {
-  const db = supabaseServer();
-  const user = db ? (await db.auth.getUser()).data.user : null;
+  const user = await getCurrentUser();
   if (!user) return NextResponse.redirect(new URL(`/login?next=/widgets/${params.slug}`, req.url));
+  if (!canDownload(user)) return NextResponse.redirect(new URL(`/widgets/${params.slug}`, req.url));
   const w = await getWidget(params.slug);
   if (!w) return new Response('Not found', { status: 404 });
-  await db.from('downloads').insert({ widget_slug: w.slug, user_id: user.id });
+  await supabaseServer().from('downloads').insert({ widget_slug: w.slug, user_id: user.id });
   return new Response(w.svg, {
     headers: { 'Content-Type': 'image/svg+xml; charset=utf-8', 'Content-Disposition': `attachment; filename="${(w.file_name || w.slug + '.svg').replace(/"/g, '')}"`, 'Cache-Control': 'no-store' },
   });

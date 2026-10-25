@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" width="100%" height="100%">
+	<g style="transform-box: view-box; transform-origin: 50px 50px;">
+	<g cursor="pointer" style="transform-box: view-box; transform-origin: 50px 50px;">
+	<g fill="none">
+		<g>
+		<path d="M1.504 65.1903L9.893 57.0973V26.1883L0 11.6883V6.8533L1.798 3.7373H100V9.5303L91.305 25.1103V63.1183C91.305 74.4543 83.048 84.1013 71.848 85.8513L5.789 96.2283C4.46 96.4373 3.164 95.6973 2.669 94.4463L1.505 91.5073V65.1903H1.504Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M1.798 9.53125L11.691 25.1103L9.893 26.1882L0 11.6882L1.798 9.53125Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M3.30273 66.6281L11.6917 58.0551V57.4561L3.30273 66.0291V66.6281Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M2.4757 93.8092C2.89268 93.8092 3.2307 87.9459 3.2307 80.7132C3.2307 73.4805 2.89268 67.6172 2.4757 67.6172C2.05873 67.6172 1.7207 73.4805 1.7207 80.7132C1.7207 87.9459 2.05873 93.8092 2.4757 93.8092Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M91.3064 25.1104H11.6914V25.9904H91.3064V25.1104Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M99.5218 10.4102H2.51783L1.79883 9.53125H100.001L99.5218 10.4102Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M12.3644 25.9004H11.6914V95.6624H12.3644V25.9004Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M11.6909 57.4557L3.30191 66.0287L1.50391 65.1897L9.89291 57.0967L11.6909 57.4557Z" fill="#F2F2F2" />
+		</g>
+	</g>
+	</g>
+	</g>
+	</svg>

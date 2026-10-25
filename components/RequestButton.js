@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
-import { WHATSAPP } from '@/lib/site';
+import { WHATSAPP } from "@/lib/site";
+import Icon from "./Icon";
 
 export default function RequestButton({ slug, name }) {
   const [open, setOpen] = useState(false);
@@ -18,7 +19,7 @@ export default function RequestButton({ slug, name }) {
 
   return (
     <>
-      <button className="btn btn-wa" onClick={() => setOpen(true)}>💬 Request detail</button>
+      <button className="btn btn-wa" onClick={() => setOpen(true)}><Icon name="chat" size={18} />Request detail</button>
       {open && (
         <div className="backdrop" onClick={e => e.target === e.currentTarget && setOpen(false)}>
           <div className="modal" role="dialog" aria-modal="true" aria-labelledby="req-title">
@@ -29,8 +30,8 @@ export default function RequestButton({ slug, name }) {
               <label>Email<input required type="email" value={f.email} onChange={set('email')} /></label>
               <label>Perusahaan (PT)<input required value={f.company} onChange={set('company')} placeholder="PT …" /></label>
               <div className="actions" style={{ margin: 0 }}>
-                <button className="btn btn-wa">Kirim via WhatsApp</button>
-                <button type="button" className="btn" onClick={() => setOpen(false)}>Batal</button>
+                <button className="btn btn-wa"><Icon name="chat" size={18} />Kirim via WhatsApp</button>
+                <button type="button" className="btn btn-text" onClick={() => setOpen(false)}>Batal</button>
               </div>
             </form>
           </div>

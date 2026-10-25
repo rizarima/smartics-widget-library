@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" width="100%" height="100%">
+	<g style="transform-box: view-box; transform-origin: 50px 50px;">
+	<g cursor="pointer" style="transform-box: view-box; transform-origin: 50px 50px;">
+	<g fill="none">
+		<path d="M80.7 100H19.3C15.9 100 13 97.2 13 93.7V6.3C13 2.9 15.8 0 19.3 0H80.6C84 0 86.9 2.8 86.9 6.3V93.8C86.9 97.2 84.1 100 80.7 100ZM20.9 92.2H79.1V7.8H20.9V92.2Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M59.9003 50.6996C59.3003 51.3996 58.2003 51.8996 57.3003 51.8996H45.6003C44.7003 51.8996 44.5003 51.3996 45.0003 50.6996L51.6003 42.7996C52.2003 42.0996 53.3003 41.5996 54.2003 41.5996H65.8003C66.7003 41.5996 66.9003 42.0996 66.4003 42.7996L59.9003 50.6996Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M64.7002 29.9004C64.4002 29.1004 63.5002 28.4004 62.6002 28.4004H50.9003C50.0003 28.4004 49.6003 29.1004 49.9003 29.9004L52.1002 35.8004C52.4002 36.6004 53.3002 37.3004 54.2002 37.3004H65.8003C66.7003 37.3004 67.1003 36.6004 66.8003 35.8004L64.7002 29.9004Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M49.7 40.3996C50.3 39.6996 50.5 38.4996 50.2 37.6996L48 31.8996C47.7 31.0996 47 30.9996 46.5 31.5996L43 35.6996C42.4 36.3996 42 37.5996 42 38.4996L42.1 47.8996C42.1 48.7996 42.6 48.8996 43.1 48.2996L49.7 40.3996Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M58.3996 70.4998H42.5996V65.7998H57.5996V57.7998H62.2996V66.4998C62.2996 68.6998 60.5996 70.4998 58.3996 70.4998Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+	</g>
+	</g>
+	</g>
+	</svg>

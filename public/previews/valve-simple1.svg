@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" width="100%" height="100%">
+	<g style="transform-box: view-box; transform-origin: 50px 50px;">
+	<g cursor="pointer" style="transform-box: view-box; transform-origin: 50px 50px;">
+	<g fill="none">
+		<path d="M57.8057 38.847V26.083H73.8057C73.8057 13.012 63.2097 2.41602 50.1387 2.41602C37.0677 2.41602 26.4717 13.013 26.4717 26.083H42.4717V38.846C29.6177 42.234 20.1387 53.935 20.1387 67.854C20.1387 84.423 33.5697 97.854 50.1387 97.854C66.7077 97.854 80.1387 84.423 80.1387 67.854C80.1387 53.936 70.6587 42.235 57.8057 38.847Z" fill-opacity="0.73" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M50.1396 93.1875C64.1307 93.1875 75.4726 81.8455 75.4726 67.8545C75.4726 53.8635 64.1307 42.5215 50.1396 42.5215C36.1486 42.5215 24.8066 53.8635 24.8066 67.8545C24.8066 81.8455 36.1486 93.1875 50.1396 93.1875Z" fill-opacity="0.73" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M50.1374 65.4289L63.9554 51.6099C56.0024 44.8319 44.2714 44.8319 36.3184 51.6099L50.1374 65.4289Z" fill-opacity="0.73" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M47.712 67.8541L33.894 54.0361C27.116 61.9891 27.116 73.7201 33.894 81.6731L47.712 67.8541Z" fill-opacity="0.73" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M50.1374 70.2803L36.3184 84.0983C44.2714 90.8763 56.0024 90.8763 63.9554 84.0983L50.1374 70.2803Z" fill-opacity="0.73" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M52.5625 67.8541L66.3815 81.6731C73.1595 73.7201 73.1595 61.9891 66.3815 54.0361L52.5625 67.8541Z" fill-opacity="0.73" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+	</g>
+	</g>
+	</g>
+	</svg>

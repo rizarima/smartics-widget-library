@@ -1,0 +1,278 @@
+{
+ "categories": [
+  [
+   "WTP",
+   "tank|group|pump|valve|checkvalve|pressure_regulator|pulsation|peristaltic|meter|gauge|rofilter|debrisscreen|irrigat|silo"
+  ],
+  [
+   "Power",
+   "turbine|compressor|electrocell|condensor|reboiler|heatexchang|pipe_3d_heatexchange|generator|boiler|transmissiontower|solarpanel|battery|powersupply"
+  ],
+  [
+   "Production",
+   "reactor|heatexchang|reboiler|condensor|pumphead|peristaltic|valve_3d_3way|valve_3d_4way|tank_3d_large|tank_3d_medium|mixer|oven|furnace|injectionmoulding|pulltrusion|processmachinery|abstractmachinery|industrial_process|bottler|rotarywasher|trommel|cyclonic|laser|heater|heatingelement|quenchtank|gear"
+  ],
+  [
+   "Piping",
+   "pipe|flange|reducer|elbow|tjunction|redirect|nopipe|duct"
+  ],
+  [
+   "Instrumentation",
+   "meter|gauge|pressure_regulator|checkvalve|sensor|thermister|bargraph|tanklevel|amps|volts"
+  ],
+  [
+   "HVAC",
+   "fan|blower|duct|diffuser|chiller|coolingtower|centralairunit|variableairvolume|refrigerator|heater1"
+  ],
+  [
+   "Material Handling",
+   "conveyor|feeder|hopper|crane|forklift|crate|trucking|tractor|bottler|barrel|^sort"
+  ],
+  [
+   "Electrical",
+   "generator|battery|powersupply|solar|transmissiontower|switch|wallsocket|volts|amps|resistance|thermister|motor|highvoltage|bulb|lighting|lamp|shoplight|compactfluorescent|windturbine|rocker|toggle"
+  ],
+  [
+   "Oil & Gas",
+   "mud|oiljack|flarestake|refinery|lineheater|cyclonicseparator"
+  ],
+  [
+   "Building",
+   "building|house|barn|factory|cityscape|door|enclosure|wallsocket|wallswitch|restaurantrefrigerator|storerefrigerator"
+  ],
+  [
+   "IT & Network",
+   "computer|cpu|pcmonitor|displays|firewall|cloud|database|satellite|vsat|pac_io|logic|videocamera|phonealert|presentation|documents|envelope"
+  ],
+  [
+   "Safety & Icon",
+   "warning|toxic|biohazard|flammable|radiation|irritant|laser|^uv|exclamation|alarmprofile|^eye|^key|people|symbol|pan_4way|^sort|grid-bg|highvoltage|chart"
+  ]
+ ],
+ "kinds": [
+  [
+   "tank(?!level)|^group|silo",
+   "Tangki",
+   "Tangki penyimpanan dengan level cairan yang naik-turun mengikuti tag."
+  ],
+  [
+   "conveyor",
+   "Conveyor",
+   "Conveyor belt untuk material handling."
+  ],
+  [
+   "checkvalve",
+   "Check valve",
+   "Check valve (katup satu arah) untuk menandai status aliran."
+  ],
+  [
+   "valve",
+   "Valve",
+   "Valve/katup untuk menampilkan status buka-tutup atau posisi."
+  ],
+  [
+   "pumphead",
+   "Pump head",
+   "Kepala pompa (pump head) untuk proses dosing/transfer."
+  ],
+  [
+   "peristaltic",
+   "Peristaltic pump",
+   "Bagian pompa peristaltik untuk dosing kimia."
+  ],
+  [
+   "pump",
+   "Pompa",
+   "Pompa untuk menampilkan status run/stop dan alarm."
+  ],
+  [
+   "turbine",
+   "Turbin",
+   "Turbin untuk status pembangkit/penggerak."
+  ],
+  [
+   "compressor",
+   "Kompresor",
+   "Kompresor untuk status run/stop dan alarm."
+  ],
+  [
+   "electrocell",
+   "Electrocell",
+   "Sel elektrolisis untuk proses kimia/listrik."
+  ],
+  [
+   "condensor",
+   "Kondensor",
+   "Kondensor untuk proses pendinginan uap."
+  ],
+  [
+   "reboiler",
+   "Reboiler",
+   "Reboiler untuk proses pemanasan kolom."
+  ],
+  [
+   "heatexchang",
+   "Heat exchanger",
+   "Heat exchanger untuk proses perpindahan panas."
+  ],
+  [
+   "reactor",
+   "Reaktor",
+   "Packed bed reactor untuk proses produksi."
+  ],
+  [
+   "meter",
+   "Meter",
+   "Flow meter / meter proses."
+  ],
+  [
+   "gauge",
+   "Gauge",
+   "Gauge (indikator dial) untuk tekanan/nilai proses."
+  ],
+  [
+   "pressure_regulator",
+   "Pressure regulator",
+   "Regulator tekanan."
+  ],
+  [
+   "pulsation",
+   "Pulsation dampener",
+   "Peredam pulsasi pada jalur pompa."
+  ],
+  [
+   "flange",
+   "Flange",
+   "Sambungan flange pipa."
+  ],
+  [
+   "reducer",
+   "Reducer",
+   "Reducer pipa (perubahan diameter)."
+  ],
+  [
+   "duct",
+   "Duct",
+   "Duct udara (HVAC) dengan warna badan mengikuti tag aliran."
+  ],
+  [
+   "fan|blower",
+   "Fan / blower",
+   "Fan atau blower untuk status run/stop dan alarm."
+  ],
+  [
+   "chiller|coolingtower|centralairunit|variableairvolume|diffuser",
+   "HVAC",
+   "Peralatan HVAC: chiller, cooling tower, AHU, VAV, diffuser."
+  ],
+  [
+   "motor",
+   "Motor",
+   "Motor listrik untuk status run/stop dan alarm."
+  ],
+  [
+   "generator",
+   "Generator",
+   "Generator/genset untuk status pembangkit."
+  ],
+  [
+   "boiler|furnace|oven|heater|heatingelement",
+   "Pemanas",
+   "Boiler, furnace, oven, atau heater untuk status proses panas."
+  ],
+  [
+   "mixer",
+   "Mixer",
+   "Mixer/agitator untuk status run/stop dan alarm."
+  ],
+  [
+   "feeder|hopper",
+   "Feeder / hopper",
+   "Feeder atau hopper untuk material curah."
+  ],
+  [
+   "mud|oiljack|flarestake|refinery",
+   "Oil & gas",
+   "Peralatan oil & gas: mud pump, pump jack, flare stack, refinery."
+  ],
+  [
+   "battery|powersupply|solar|transmissiontower|wallsocket|switch|rocker|toggle|resistance|thermister|highvoltage|bulb|lighting|lamp|shoplight|compactfluorescent|windturbine",
+   "Elektrikal",
+   "Komponen elektrikal untuk status ON/OFF dan alarm."
+  ],
+  [
+   "building|house|barn|factory|cityscape",
+   "Bangunan",
+   "Ikon bangunan/fasilitas untuk peta site."
+  ],
+  [
+   "door|enclosure",
+   "Pintu / panel",
+   "Pintu atau enclosure panel untuk status buka-tutup."
+  ],
+  [
+   "computer|cpu|pcmonitor|displays|firewall|cloud|database|satellite|vsat|pac_io|logic|videocamera|phonealert",
+   "IT & jaringan",
+   "Ikon perangkat IT, jaringan, dan komunikasi."
+  ],
+  [
+   "warning|toxic|biohazard|flammable|radiation|irritant|laser|^uv|exclamation",
+   "Rambu keselamatan",
+   "Rambu keselamatan yang bisa berkedip saat alarm."
+  ],
+  [
+   "crane|forklift|trucking|tractor|crate|barrel",
+   "Material handling",
+   "Alat angkut dan kemasan untuk material handling."
+  ],
+  [
+   "pipe|elbow|tjunction|redirect",
+   "Pipa",
+   "Pipa/sambungan pipa untuk menampilkan aliran."
+  ]
+ ],
+ "templates": {
+  "Template 1 - Indikator": "Bagian berwarna hitam berubah warna mengikuti tag, berkedip saat alarm, dan bisa diputar atau dibalik arahnya.",
+  "Template 2 - Tank level": "Bagian dalam tangki menjadi level cairan dengan arah isi, animasi air, skala, dan garis batas alarm yang bisa diatur.",
+  "Template 3 - Pipa": "Format Pipe Custom: warna pipa mengikuti tag flow, pipa lurus bisa ditarik memanjang, dan ada animasi aliran yang bisa dinyalakan.",
+  "Template 4 - Conveyor": "Belt bergerak saat tag ON atau di atas 0 dan berhenti saat 0, ditambah semua fitur Template 1 (warna, kedip alarm, rotasi, hadap)."
+ },
+ "propDocs": {
+  "indicator": "Tag utama widget (Boolean/Float/Integer). Warna bagian indikator dan semua alarm membaca tag ini.",
+  "level": "Tag level (Float/Integer). Tinggi cairan di dalam tangki mengikuti nilai tag ini.",
+  "autoManual": "Tag Auto/Manual (1 = Auto, 0 = Manual). Dipakai badge A/M di pojok kanan bawah.",
+  "shapeColor": "Atur warna berdasarkan kondisi nilai tag (min/max/sama dengan). Contoh: OFF hitam, ON hijau.",
+  "rotation": "Putar widget bebas, misalnya 0°, 90°, 180°, 270°.",
+  "facing": "Arah hadap: kanan, kiri (cermin), atas, atau bawah.",
+  "blinkOnAlarm": "Widget berkedip saat tag alarm (fAlarm, HiHi, Hi, Lo, LoLo).",
+  "blinkColor": "Warna kedip untuk alarm berat (HiHi/LoLo).",
+  "useAck": "Kedip hanya selama alarm belum di-acknowledge; setelah di-ack warna alarm tetap tapi diam.",
+  "useLevelColors": "Pakai warna berbeda untuk alarm ringan (Hi/Lo).",
+  "warnColor": "Warna untuk alarm Hi/Lo.",
+  "showBadQuality": "Saat kualitas tag buruk, widget jadi abu-abu dan muncul tanda seru merah.",
+  "showTagName": "Tampilkan nama tag di bawah widget.",
+  "showValue": "Tampilkan nilai tag (dengan satuan) di bawah widget.",
+  "showAutoManual": "Tampilkan badge A (Auto) / M (Manual).",
+  "useTagRange": "Pakai Out min / Out max dari konfigurasi tag sebagai 0% dan 100% level.",
+  "levelMin": "Nilai saat tangki kosong (dipakai jika range tag dimatikan).",
+  "levelMax": "Nilai saat tangki penuh (dipakai jika range tag dimatikan).",
+  "fillDirection": "Arah pengisian: bawah→atas, atas→bawah, kiri→kanan, kanan→kiri. Selalu mengikuti layar walau widget diputar.",
+  "emptyColor": "Warna bagian tangki yang kosong.",
+  "waterAnimation": "Animasi air: ombak di permukaan dan gelembung naik.",
+  "showScale": "Tampilkan penggaris level dari min ke max di samping tangki.",
+  "scaleDivisions": "Jumlah pembagian skala (1-10).",
+  "scalePrecision": "Jumlah angka di belakang koma pada skala.",
+  "showLimitLines": "Tampilkan garis HiHi/Hi/Lo/LoLo dari konfigurasi alarm tag.",
+  "limitLineColor": "Warna garis batas saat normal.",
+  "limitLineAlarm": "Garis batas yang terlewati berubah warna alarm dan berkedip.",
+  "flow": "Tag aliran pipa (Boolean/Float/Integer). ON atau nilai di atas 0 berarti mengalir.",
+  "flowAnimation": "Garis putus-putus bergerak di tengah pipa saat mengalir; diam saat tag 0/OFF.",
+  "flowDirection": "Arah animasi aliran: maju (arah gambar) atau mundur.",
+  "flowSpeed": "Waktu satu siklus animasi aliran dalam detik. Makin kecil makin cepat.",
+  "flowColor": "Warna garis animasi aliran.",
+  "beltAnimation": "Belt conveyor bergerak saat tag ON atau di atas 0, berhenti saat 0.",
+  "beltDirection": "Arah gerak belt: maju (belt atas ke kanan) atau mundur.",
+  "beltSpeed": "Waktu satu siklus belt dalam detik. Makin kecil makin cepat.",
+  "beltMarkColor": "Warna tanda pada belt yang bergerak."
+ }
+}

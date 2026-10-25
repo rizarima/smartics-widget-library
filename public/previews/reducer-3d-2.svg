@@ -7,7 +7,7 @@
 		<path d="M100 40H92V60H100V40Z" fill="#999999" />
 		<path d="M0 59.8996V40.1006L100 46.4996V53.4996L0 59.8996Z" fill="#666666" />
 		<path d="M0 57.0697V42.9287L100 47.4997V52.4997L0 57.0697Z" fill="#CCCCCC" />
-		<path d="M100 51.7498V48.2498L0 45.0498V54.9488L100 51.7498Z"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M100 51.7498V48.2498L0 45.0498V54.9488L100 51.7498Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
 	</g>
 	</g>
 	</g>

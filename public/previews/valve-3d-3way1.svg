@@ -22,12 +22,12 @@
 		<path d="M81.5 66.2499C81.424 66.2499 81.347 66.2319 81.276 66.1969L49.776 50.4469C49.607 50.3619 49.5 50.1889 49.5 49.9999C49.5 49.8109 49.607 49.6379 49.776 49.5529L81.276 33.8029C81.43 33.7249 81.616 33.7339 81.762 33.8249C81.91 33.9159 82 34.0769 82 34.2499V65.7499C82 65.9229 81.91 66.0839 81.763 66.1759C81.683 66.2249 81.592 66.2499 81.5 66.2499Z" fill="#CCCCCC" />
 		<path d="M55 84.5H45V100H55V84.5Z" fill="#CCCCCC" />
 		<path d="M65.7499 81.9997H34.2499C34.0769 81.9997 33.9159 81.9097 33.8249 81.7627C33.7339 81.6157 33.7249 81.4317 33.8029 81.2767L49.5529 49.7767C49.7229 49.4377 50.2779 49.4377 50.4479 49.7767L66.1979 81.2767C66.2749 81.4317 66.2669 81.6157 66.1769 81.7627C66.0839 81.9097 65.9229 81.9997 65.7499 81.9997Z" fill="#CCCCCC" />
-		<path d="M15.5 46.5H0V53.5H15.5V46.5Z"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
-		<path d="M19 35.0586V64.9406L48.882 49.9996L19 35.0586Z"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
-		<path d="M35.0586 81.0002H64.9406L49.9996 51.1182L35.0586 81.0002Z"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
-		<path d="M53.5 84.5H46.5V100H53.5V84.5Z"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
-		<path d="M100 46.5H84.5V53.5H100V46.5Z"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
-		<path d="M51.1172 49.9996L80.9992 64.9406V35.0586L51.1172 49.9996Z"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M15.5 46.5H0V53.5H15.5V46.5Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M19 35.0586V64.9406L48.882 49.9996L19 35.0586Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M35.0586 81.0002H64.9406L49.9996 51.1182L35.0586 81.0002Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M53.5 84.5H46.5V100H53.5V84.5Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M100 46.5H84.5V53.5H100V46.5Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M51.1172 49.9996L80.9992 64.9406V35.0586L51.1172 49.9996Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
 		</g>
 	</g>
 	</g>

@@ -12,7 +12,7 @@
 				</clipPath>
 				<g clip-path="url(#tank-3d-v1-lvl-clip)">
 					<g transform="matrix(59,0,0,-76.5,20.5,89.75)">
-						<g>
+						<g fill="#000000">
 							<animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" />
 							<rect x="-0.5" y="-1" width="2" height="1.55" style="transition: height 0.8s ease;" fill="#2196F3" />
 							</g>

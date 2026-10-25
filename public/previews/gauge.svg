@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" width="100%" height="100%">
+	<g style="transform-box: view-box; transform-origin: 50px 50px;">
+	<g cursor="pointer" style="transform-box: view-box; transform-origin: 50px 50px;">
+	<g fill="none">
+		<path d="M50 1C23 1 1 23 1 50C1 77 23 99 50 99C77 99 99 77 99 50C99 23 77 1 50 1ZM50 88.6C28.7 88.6 11.4 71.3 11.4 50C11.4 41.5 14.2 33.6 18.9 27.2C19.1 25 20 22.8 21.7 21.2L21.8 21.1C23.5 19.4 25.7 18.5 28.1 18.3C34.3 14 41.9 11.4 50.1 11.4C71.4 11.4 88.7 28.7 88.7 50C88.7 71.3 71.3 88.6 50 88.6Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M34.7 20.2996L43.4 27.0996C51.5 24.7996 60.5 26.7996 66.9 33.0996L74.3 25.6996C63.4 14.7996 46.9 12.7996 34 19.6996C34.2 19.8996 34.4 20.0996 34.7 20.2996Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M60.3998 48.4004C61.7998 49.5004 61.8998 51.3004 60.6998 52.5004L53.1998 60.0004C51.9998 61.2004 50.0998 61.1004 49.0998 59.7004L25.7998 30.3004C24.6998 28.9004 24.8998 26.8004 26.0998 25.6004L26.1998 25.5004C27.3998 24.3004 29.4998 24.2004 30.8998 25.2004L60.3998 48.4004Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+	</g>
+	</g>
+	</g>
+	</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" width="100%" height="100%">
+	<g style="transform-box: view-box; transform-origin: 50px 50px;">
+	<g cursor="pointer" style="transform-box: view-box; transform-origin: 50px 50px;">
+	<g fill="none">
+		<path d="M50 84.9027L39.504 65.3607H44.309V55.6907H19.542V60.4957L0 49.9997L19.542 39.5037V44.3087H44.309V34.6387H39.504L50 15.0967L60.496 34.6387H55.691V44.3087H80.458V39.5037L100 49.9997L80.458 60.4957V55.6907H55.691V65.3607H60.496L50 84.9027Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+	</g>
+	</g>
+	</g>
+	</svg>

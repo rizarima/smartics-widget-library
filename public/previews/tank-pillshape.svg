@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" width="100%" height="100%">
+	<g style="transform-box: view-box; transform-origin: 50px 50px;">
+	<g style="transform-box: view-box; transform-origin: 0px 0px;">
+	<g cursor="pointer" style="transform-box: view-box; transform-origin: 50px 50px;">
+	<g fill="none">
+		<g>
+		<path d="M28.7227 94.3525C40.4737 101.883 59.5267 101.883 71.2777 94.3525V5.64652C59.5267 -1.88348 40.4737 -1.88348 28.7227 5.64652V94.3525Z" fill="#000000" fill-opacity="0.5" />
+				<clipPath id="tank-pillshape-lvl-clip">
+						<path d="M28.7227 94.3525C40.4737 101.883 59.5267 101.883 71.2777 94.3525V5.64652C59.5267 -1.88348 40.4737 -1.88348 28.7227 5.64652V94.3525Z" />
+				</clipPath>
+				<g clip-path="url(#tank-pillshape-lvl-clip)">
+					<g transform="matrix(42.56,0,0,-99.75,28.72,100)">
+						<g fill="#000000">
+							<animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" />
+							<rect x="-0.5" y="-1" width="2" height="1.55" style="transition: height 0.8s ease;" fill="#2196F3" />
+							</g>
+						</g>
+				</g>
+		<path d="M49.2979 58.9717C55.5116 58.9717 60.5489 53.9345 60.5489 47.7207C60.5489 41.507 55.5116 36.4697 49.2979 36.4697C43.0841 36.4697 38.0469 41.507 38.0469 47.7207C38.0469 53.9345 43.0841 58.9717 49.2979 58.9717Z" fill="#000000" fill-opacity="0.5" />
+		<path d="M52.6144 42.2373H45.9844V53.2023H52.6144V42.2373Z" fill="#000000" fill-opacity="0.5" stroke-width="0.255" stroke-miterlimit="10" stroke="#8FC0F7" />
+		<path d="M58.2676 48.1861L59.0736 48.6521L59.8806 48.1861V47.2551L59.0736 46.7891L58.2676 47.2551V48.1861Z" fill="#000000" fill-opacity="0.5" />
+		<path d="M38.6973 48.1861L39.5033 48.6521L40.3103 48.1861V47.2551L39.5033 46.7891L38.6973 47.2551V48.1861Z" fill="#000000" fill-opacity="0.5" />
+		<path d="M48.4824 57.9722L49.2884 58.4372L50.0944 57.9722V57.0402L49.2884 56.5752L48.4824 57.0402V57.9722Z" fill="#000000" fill-opacity="0.5" />
+		<path d="M48.4824 38.4009L49.2884 38.8659L50.0944 38.4009V37.4699L49.2884 37.0039L48.4824 37.4699V38.4009Z" fill="#000000" fill-opacity="0.5" />
+		<path d="M55.4023 41.2671L56.2083 41.7321L57.0143 41.2671L57.0153 40.3361L56.2083 39.8701L55.4023 40.3361V41.2671Z" fill="#000000" fill-opacity="0.5" />
+		<path d="M41.5625 55.106L42.3685 55.571L43.1755 55.106V54.174L42.3685 53.709L41.5625 54.174V55.106Z" fill="#000000" fill-opacity="0.5" />
+		<path d="M55.4023 54.174L56.2083 53.709L57.0143 54.174L57.0153 55.106L56.2083 55.571L55.4023 55.105V54.174Z" fill="#000000" fill-opacity="0.5" />
+		<path d="M41.5625 40.3361L42.3685 39.8701L43.1755 40.3361V41.2671L42.3685 41.7321L41.5625 41.2671V40.3361Z" fill="#000000" fill-opacity="0.5" />
+		<path d="M40.8448 6.41211H28.9238V7.41211H40.8448V6.41211Z" fill="#000000" fill-opacity="0.5" />
+		<path d="M40.8448 92.0947H28.9238V93.0947H40.8448V92.0947Z" fill="#000000" fill-opacity="0.5" />
+		</g>
+	</g>
+	</g>
+	</g>
+	</g>
+	</svg>

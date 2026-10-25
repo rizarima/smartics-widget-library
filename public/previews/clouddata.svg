@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" width="100%" height="100%">
+	<g style="transform-box: view-box; transform-origin: 50px 50px;">
+	<g cursor="pointer" style="transform-box: view-box; transform-origin: 50px 50px;">
+	<g fill="none">
+		<g>
+		<path d="M95.3002 38.1C92.9002 35.6 89.8002 34 86.4002 33.5C85.3002 23.7 77.0002 16 66.9002 16C61.3002 16 56.2002 18.3 52.5002 22.3C50.6002 21.8 48.6002 21.5 46.6002 21.5C37.5002 21.5 29.6002 27 26.2002 34.9C26.5002 34.9 26.8002 34.9 27.1002 34.9C28.8002 34.9 30.6002 34.9 32.2002 35C35.2002 30.1 40.5002 26.9 46.6002 26.9C48.6002 26.9 50.6002 27.3 52.4002 27.9L54.3002 28.6L55.5002 27C58.2002 23.4 62.3002 21.3 66.8002 21.3C74.6002 21.3 80.9002 27.6 80.9002 35.4C80.9002 35.5 80.9002 35.5 80.9002 35.6L81.0002 38.7H83.7002C89.7002 38.8 94.6002 43.7 94.6002 49.7C94.6002 55.8 89.7002 60.7 83.6002 60.7H57.0002V66.1H83.6002C92.6002 66.1 100 58.7 100 49.7C100 45.3 98.3002 41.2 95.3002 38.1Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M27.1 51.4C42.0669 51.4 54.2 48.1765 54.2 44.2C54.2 40.2236 42.0669 37 27.1 37C12.1331 37 0 40.2236 0 44.2C0 48.1765 12.1331 51.4 27.1 51.4Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M27.1 78.7996C12.1 78.7996 0 75.5996 0 71.5996V76.1996C0 80.1996 12.1 83.3996 27.1 83.3996C42.1 83.3996 54.2 80.1996 54.2 76.1996V71.5996C54.1 75.5996 42 78.7996 27.1 78.7996Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M27.1 57.2996C12.1 57.2996 0 54.0996 0 50.0996V54.9996C0 58.9996 12.1 62.1996 27.1 62.1996C42.1 62.1996 54.1 58.9996 54.1 54.9996V50.0996C54.1 54.0996 42 57.2996 27.1 57.2996Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M27.1 68.1004C12.1 68.1004 0 64.9004 0 60.9004V65.8004C0 69.8004 12.1 73.0004 27.1 73.0004C42.1 73.0004 54.2 69.8004 54.2 65.8004V60.9004C54.1 64.8004 42 68.1004 27.1 68.1004Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		</g>
+	</g>
+	</g>
+	</g>
+	</svg>

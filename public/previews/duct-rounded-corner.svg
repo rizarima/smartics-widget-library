@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" width="100%" height="100%">
+	<g cursor="pointer" style="transform-box: view-box; transform-origin: 50px 50px;">
+		<path d="M32 25H0V75H18.5C22.09 75 25 77.91 25 81.5V100H75V68C75 44.252 55.748 25 32 25Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M75 100V68C75 44.252 55.748 25 32 25H0V27H32C54.644 27 73 45.356 73 68V100H75Z" fill="#525252" />
+		<path d="M0 75H18.5C22.09 75 25 77.91 25 81.5V100H27V81.5C27 76.806 23.194 73 18.5 73H0V75Z" fill="#525252" />
+		</g>
+</svg>

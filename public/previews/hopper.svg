@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" width="100%" height="100%">
+	<g style="transform-box: view-box; transform-origin: 50px 50px;">
+	<g cursor="pointer" style="transform-box: view-box; transform-origin: 50px 50px;">
+	<g fill="none">
+		<g>
+		<path d="M76.5 0.5L5 5.5L5.5 25.8L6.3 57.4L6.9 59.7L10.9 59.4L10.3 26.1L15 42.6L14.7 42L15.8 98.4L16.4 100.5L20.7 100.1L20.3 47.5L42.7 62L44.5 61.9L47.3 69.9V70C48.1 72.7 51.4 74.2 54.7 73.2C56.1 72.8 57.2 72 58 71C59.1 69.7 59.6 68 59.1 66.4H59.2C59.1 66.1 59 65.8 58.8 65.5L57.2 61L71.6 52.7L71.5 54.5L75.7 54.1L75.8 50.2L90.8 41.5L88.4 90.5L89.7 93.7L93.6 93.2L96.5 38.2L76.5 0.5Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M75.3002 2.2002L57.7002 39.0002L93.7002 36.5002L75.3002 2.2002Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M95.2004 40L92.4004 91.1" stroke="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<circle cx="17.1996" cy="45.2006" r="0.4184" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></circle>
+		<path d="M17.2998 49.5L17.9998 90.9" stroke-width="0.8368" stroke-miterlimit="10" stroke-linecap="round" stroke="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M18.0996 93V92.5" stroke-width="0.8368" stroke-miterlimit="10" stroke-linecap="round" stroke="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M5 5.5L6.3 57.4L6.9 59.7L5.7 7.6L5 5.5Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M17.1992 45.2002L18.0992 93.1002" stroke="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M94.8996 44.2998L92.5996 88.9998" stroke-width="0.8368" stroke-miterlimit="10" stroke-linecap="round" stroke="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<circle cx="92.3998" cy="91.1" r="0.4184" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></circle>
+		<path d="M95.1992 40V40.1" stroke-width="0.8368" stroke-miterlimit="10" stroke-linecap="round" stroke="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M10.3996 32.7L10.2996 26.1L5.59961 7.5L6.29961 25.8L10.3996 32.7Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M96.6 38.2002L56.9 61.2002L42.7 62.0002L15.5 44.4002L96.6 38.2002Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M16.3992 100.5L15.7992 98.4L14.6992 42L15.4992 44.4L16.3992 100.5Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M93 38.4004L90.9 40.8004L88.5 90.5004L89.8 93.7004L93 38.4004Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M15.6887 44.3392L6.19238 10.7549L5.80746 10.8637L15.3038 44.448L15.6887 44.3392Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M56.4851 68.591C56.1117 67.3769 54.6535 66.7481 53.2283 67.1865C51.803 67.6249 50.9503 68.9645 51.3238 70.1786C51.6973 71.3927 53.1554 72.0216 54.5807 71.5832C56.0059 71.1447 56.8586 69.8051 56.4851 68.591Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M47.3997 69.9998C48.1997 72.6998 51.4997 74.0998 54.7997 73.0998C57.9997 72.0998 59.9997 69.0998 59.0997 66.3998L55.8997 57.3998C55.0997 54.6998 51.7997 53.2998 48.4997 54.2998C45.2997 55.2998 43.2997 58.2998 44.1997 60.9998L47.3997 69.9998Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M47.3994 63.4007C48.6994 61.1007 51.7994 61.0007 51.7994 61.0007L49.7994 56.9007C49.3994 55.7007 47.9994 55.1007 46.5994 55.6007C45.1994 56.0007 44.3994 57.3007 44.6994 58.5007L45.2994 59.4007L47.3994 63.4007Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M7.09961 7.2002L39.6996 40.8002L17.5996 42.3002L7.09961 7.2002Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M56.3999 68.7004C56.7999 69.9004 55.8999 71.2004 54.4999 71.6004C53.0999 72.0004 51.5999 71.4004 51.2999 70.2004L50.6999 68.9004C50.2999 67.7004 51.1999 66.4004 52.5999 66.0004C53.9999 65.6004 55.4999 66.2004 55.7999 67.4004L56.3999 68.7004Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M46.6999 62.4999C46.2999 61.2999 47.1999 59.9999 48.5999 59.5999C49.9999 59.1999 51.3999 59.7999 51.7999 60.8999C51.7999 60.8999 48.6999 60.9999 47.3999 63.2999L46.6999 62.4999Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M48.7998 52.5998C53.1998 51.5998 57.2998 52.5998 58.0998 54.6998C58.0998 54.4998 58.0998 54.2998 58.0998 54.1998C57.5998 51.7998 53.3998 50.6998 48.7998 51.7998C44.1998 52.7998 40.7998 55.5998 41.3998 57.9998C41.3998 58.0998 41.4998 58.1998 41.4998 58.2998C41.2998 55.9998 44.4998 53.5998 48.7998 52.5998Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M59.0304 66.4176C58.1861 63.6727 54.8912 62.2504 51.6712 63.2409C48.4512 64.2314 46.5253 67.2595 47.3696 70.0044C48.214 72.7494 51.5088 74.1717 54.7288 73.1812C57.9488 72.1907 59.8747 69.1626 59.0304 66.4176Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M54.4 71.9006C52 72.6006 49.6 71.6006 49 69.6006Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M54.4 71.9006C52 72.6006 49.6 71.6006 49 69.6006" stroke-width="0.2092" stroke-miterlimit="10" stroke="white" />
+		<path d="M19.1992 43.6004V43.2004L95.3992 37.4004L75.9992 1.10039L76.3992 0.900391L95.9992 37.8004H95.6992L19.1992 43.6004Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M75.3239 2.42631L75.2949 2.02734L7.07276 6.97987L7.10172 7.37884L75.3239 2.42631Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M17.7962 42.1641L7.30664 7.09766L6.9234 7.2123L17.413 42.2788L17.7962 42.1641Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M53.1992 67.3002C54.5992 66.9002 56.0992 67.5002 56.3992 68.7002Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M53.1992 67.3002C54.5992 66.9002 56.0992 67.5002 56.3992 68.7002" stroke-width="0.4184" stroke-miterlimit="10" stroke="white" />
+		<path d="M51.7998 63.3008C54.9998 62.3008 58.2998 63.7008 59.1998 66.4008Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M51.7998 63.3008C54.9998 62.3008 58.2998 63.7008 59.1998 66.4008" stroke-width="0.4184" stroke-miterlimit="10" stroke="white" />
+		</g>
+	</g>
+	</g>
+	</g>
+	</svg>

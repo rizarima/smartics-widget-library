@@ -16,10 +16,10 @@
 		<path d="M15.5 45H0V55H15.5V45Z" fill="#CCCCCC" />
 		<path d="M18.5 66.2495C18.409 66.2495 18.317 66.2245 18.237 66.1755C18.09 66.0835 18 65.9225 18 65.7495V34.2495C18 34.0765 18.09 33.9155 18.237 33.8245C18.384 33.7335 18.568 33.7255 18.723 33.8025L50.223 49.5525C50.393 49.6375 50.5 49.8105 50.5 49.9995C50.5 50.1885 50.393 50.3615 50.224 50.4465L18.724 66.1965C18.653 66.2315 18.577 66.2495 18.5 66.2495Z" fill="#CCCCCC" />
 		<path d="M81.5 66.2499C81.424 66.2499 81.347 66.2319 81.276 66.1969L49.776 50.4469C49.607 50.3619 49.5 50.1889 49.5 49.9999C49.5 49.8109 49.607 49.6379 49.776 49.5529L81.276 33.8029C81.43 33.7249 81.616 33.7339 81.762 33.8249C81.91 33.9159 82 34.0769 82 34.2499V65.7499C82 65.9229 81.91 66.0839 81.763 66.1759C81.683 66.2249 81.592 66.2499 81.5 66.2499Z" fill="#CCCCCC" />
-		<path d="M100 46.5H84.5V53.5H100V46.5Z"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
-		<path d="M15.5 46.5H0V53.5H15.5V46.5Z"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
-		<path d="M19 35.0586V64.9406L48.882 49.9996L19 35.0586Z"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
-		<path d="M51.1172 49.9996L80.9992 64.9406V35.0586L51.1172 49.9996Z"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M100 46.5H84.5V53.5H100V46.5Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M15.5 46.5H0V53.5H15.5V46.5Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M19 35.0586V64.9406L48.882 49.9996L19 35.0586Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M51.1172 49.9996L80.9992 64.9406V35.0586L51.1172 49.9996Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
 	</g>
 	</g>
 	</g>

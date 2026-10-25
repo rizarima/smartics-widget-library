@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" width="100%" height="100%">
+	<g style="transform-box: view-box; transform-origin: 50px 50px;">
+	<g cursor="pointer" style="transform-box: view-box; transform-origin: 50px 50px;">
+	<g fill="none">
+		<g>
+		<path d="M80 97C80 98.65 78.65 100 77 100H23C21.35 100 20 98.65 20 97V3.25C20 1.6 21.35 0.25 23 0.25H77C78.65 0.25 80 1.6 80 3.25V97Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M49.999 87.834C58.5136 87.834 65.416 80.9316 65.416 72.417C65.416 63.9024 58.5136 57 49.999 57C41.4845 57 34.582 63.9024 34.582 72.417C34.582 80.9316 41.4845 87.834 49.999 87.834Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M49.999 43C58.5136 43 65.416 36.0976 65.416 27.583C65.416 19.0684 58.5136 12.166 49.999 12.166C41.4845 12.166 34.582 19.0684 34.582 27.583C34.582 36.0976 41.4845 43 49.999 43Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M50 52.5C51.3807 52.5 52.5 51.3807 52.5 50C52.5 48.6193 51.3807 47.5 50 47.5C48.6193 47.5 47.5 48.6193 47.5 50C47.5 51.3807 48.6193 52.5 50 52.5Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M25 5H75L79.094 1.111C78.552 0.58 77.813 0.25 77 0.25H23C21.35 0.25 20 1.6 20 3.25V97C20 97.825 20.338 98.575 20.881 99.119L25 95V5Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M44.75 64.333V71.667H42.25V72.667H45.75V64.333H44.75Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M56.75 64.333V71.667H54.25V72.667H57.75V64.333H56.75Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M44.75 19.5V26.833H42.25V27.833H45.75V19.5H44.75Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M56.75 19.5V26.833H54.25V27.833H57.75V19.5H56.75Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M52.2445 48.7133L51.5879 47.959L47.756 51.2945L48.4126 52.0488L52.2445 48.7133Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M79.0939 1.11133L74.9999 5.00033V95.0003H24.9999L20.8809 99.1193C21.4249 99.6623 22.1749 100 22.9999 100H76.9999C78.6499 100 79.9999 98.6503 79.9999 97.0003V3.25033C79.9999 2.41333 79.6509 1.65633 79.0939 1.11133Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M35.582 73.417C35.582 64.902 42.485 58 50.999 58C55.002 58 58.636 59.538 61.376 62.039C58.557 58.95 54.511 57 49.999 57C41.485 57 34.582 63.902 34.582 72.417C34.582 76.929 36.532 80.975 39.621 83.794C37.121 81.054 35.582 77.419 35.582 73.417Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M44.75 64.333H42.25V71.666H44.75V64.333Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M56.75 64.333H54.25V71.666H56.75V64.333Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M46.75 82.833V80.416C46.75 78.621 48.205 77.166 50 77.166C51.795 77.166 53.25 78.621 53.25 80.416V82.833H46.75Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M35.582 28.583C35.582 20.069 42.484 13.166 50.999 13.166C55.002 13.166 58.636 14.704 61.376 17.205C58.557 14.116 54.511 12.166 49.999 12.166C41.485 12.166 34.582 19.068 34.582 27.583C34.582 32.095 36.532 36.141 39.621 38.96C37.121 36.22 35.582 32.586 35.582 28.583Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M44.75 19.5H42.25V26.833H44.75V19.5Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M56.75 19.5H54.25V26.833H56.75V19.5Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M46.75 38V35.583C46.75 33.788 48.205 32.333 50 32.333C51.795 32.333 53.25 33.788 53.25 35.583V38H46.75Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M25.25 95H24.75V4.75H75V5.25H25.25V95Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M25.2752 4.70874L21.2754 0.90918L20.7244 1.48918L24.7243 5.28874L25.2752 4.70874Z" fill-opacity="0.5" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		</g>
+	</g>
+	</g>
+	</g>
+	</svg>

@@ -18,11 +18,7 @@ npm run dev                  # buka http://localhost:3000
    - SQL Editor → tempel isi `supabase/schema.sql` → Run.
    - Authentication → Sign In / Providers → Email: matikan **Confirm email** supaya partner langsung bisa download setelah daftar (kalau dibiarkan aktif, partner harus klik link di email dulu).
    - Authentication → URL Configuration → Site URL: isi alamat Vercel nanti (mis. `https://smartics-widget-library.vercel.app`).
-2. **Isi database** (sekali, dari komputer, perlu Node.js 20+): salin `.env.example` menjadi `.env.local`, isi tiga kuncinya, lalu jalankan
-   ```bash
-   npm install
-   npm run seed
-   ```
+2. **Isi database** (opsional): widget otomatis diambil dari data bawaan di repo selama tabel `widgets` masih kosong, jadi langkah ini boleh dilewati. Kalau ingin mengelola widget dari Supabase, jalankan `npm run seed` (perlu Node.js 20+ dan `.env.local`).
 3. **GitHub**: push folder ini ke repository GitHub.
 4. **Vercel**: Add New → Project → pilih repository → Environment Variables: `NEXT_PUBLIC_SUPABASE_URL` dan `NEXT_PUBLIC_SUPABASE_ANON_KEY` → Deploy.
 

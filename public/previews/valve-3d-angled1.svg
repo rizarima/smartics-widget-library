@@ -19,10 +19,10 @@
 		<path d="M55 83H45V100H55V83Z" fill="#CCCCCC" />
 		<path d="M18.5 66.2505C18.409 66.2505 18.317 66.2255 18.237 66.1765C18.09 66.0845 18 65.9235 18 65.7505V34.2505C18 34.0775 18.09 33.9165 18.237 33.8255C18.384 33.7345 18.568 33.7265 18.723 33.8035L50.223 49.5535C50.393 49.6385 50.5 49.8115 50.5 50.0005C50.5 50.1895 50.393 50.3625 50.224 50.4475L18.724 66.1975C18.653 66.2325 18.577 66.2505 18.5 66.2505Z" fill="#CCCCCC" />
 		<path d="M65.7499 82.0007H34.2499C34.0769 82.0007 33.9159 81.9107 33.8249 81.7637C33.7339 81.6167 33.7249 81.4327 33.8029 81.2777L49.5529 49.7777C49.7229 49.4387 50.2779 49.4387 50.4479 49.7777L66.1979 81.2777C66.2749 81.4327 66.2669 81.6167 66.1769 81.7637C66.0839 81.9107 65.9229 82.0007 65.7499 82.0007Z" fill="#CCCCCC" />
-		<path d="M17.125 46.5H0V53.5H17.125V46.5Z"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
-		<path d="M53.5 83H46.5V100H53.5V83Z"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
-		<path d="M18.5 65.75L50 50L18.5 34.25V65.75Z"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
-		<path d="M65.75 81.5L50 50L34.25 81.5H65.75Z"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M17.125 46.5H0V53.5H17.125V46.5Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M53.5 83H46.5V100H53.5V83Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M18.5 65.75L50 50L18.5 34.25V65.75Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M65.75 81.5L50 50L34.25 81.5H65.75Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
 		</g>
 	</g>
 	</g>

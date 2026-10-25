@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" width="100%" height="100%">
+	<g style="transform-box: view-box; transform-origin: 50px 50px;">
+	<g cursor="pointer" style="transform-box: view-box; transform-origin: 50px 50px;">
+	<g fill="none">
+		<path d="M64.3 13.2998C65.6 12.3998 67 11.8998 68.4 11.8998C68.6 11.8998 68.8 11.8998 69 11.8998C67.9 11.1998 66.7 10.7998 65.3 10.7998H33.5C29.8 10.7998 26.7 13.7998 26.7 17.5998V71.3998C26.7 71.6998 26.4 71.9998 26.1 71.9998H3.1C1.4 71.9998 0 73.3998 0 75.0998C0 76.7998 1.4 78.1998 3.1 78.1998H26.2C29.9 78.1998 33 75.1998 33 71.3998V17.5998C33 17.2998 33.3 16.9998 33.6 16.9998H59L64.3 13.2998Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M96.9 72.0996H74.6V73.4996C74.6 75.0996 74.2 76.6996 73.5 78.2996H96.9C98.6 78.2996 100 76.8996 100 75.1996C100 73.4996 98.6 72.0996 96.9 72.0996Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M50.4004 86.9995C50.4004 88.9995 51.8004 89.6995 53.4004 88.5995L67.0004 79.2995C68.7004 78.0995 70.0004 75.4995 70.0004 73.4995V18.6995C70.0004 16.6995 68.6004 15.9995 67.0004 17.0995L53.5004 26.3995C51.8004 27.5995 50.5004 30.1995 50.5004 32.1995V86.9995H50.4004Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+	</g>
+	</g>
+	</g>
+	</svg>

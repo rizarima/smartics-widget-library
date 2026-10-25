@@ -10,7 +10,7 @@
 		<path d="M50 76.5C64.6355 76.5 76.5 64.6355 76.5 50C76.5 35.3645 64.6355 23.5 50 23.5C35.3645 23.5 23.5 35.3645 23.5 50C23.5 64.6355 35.3645 76.5 50 76.5Z" fill="#666666" />
 		<path d="M50 28.5C38.126 28.5 28.5 38.126 28.5 50C28.5 61.874 38.126 71.5 50 71.5C61.874 71.5 71.5 61.874 71.5 50C71.5 38.126 61.874 28.5 50 28.5ZM50 70C38.954 70 30 61.046 30 50C30 38.954 38.954 30 50 30C61.046 30 70 38.954 70 50C70 61.046 61.046 70 50 70Z" fill="#CCCCCC" />
 		<path d="M100 45.0039H0V54.9959H100V45.0039Z" fill="#CCCCCC" />
-		<path d="M30.839 46.5H0V53.5H31.03H73.22H100V46.5H73.411H30.839Z"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
+		<path d="M30.839 46.5H0V53.5H31.03H73.22H100V46.5H73.411H30.839Z" fill="#000000"><animate attributeName="opacity" calcMode="discrete" dur="1s" repeatCount="indefinite" values="1;1" /></path>
 	</g>
 	</g>
 	</g>
