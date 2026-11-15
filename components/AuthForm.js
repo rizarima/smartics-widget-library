@@ -33,6 +33,7 @@ export default function AuthForm({ mode, next, enabled }) {
       router.refresh();
       return;
     }
+    if (mode === 'login') fetch('/api/login-log', { method: 'POST' }).catch(() => {});
     router.push(next);
     router.refresh();
   };

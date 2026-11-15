@@ -246,5 +246,62 @@ drop policy if exists "avatar own delete" on storage.objects;
 create policy "avatar own delete" on storage.objects for delete to authenticated
   using (bucket_id = 'images' and (storage.foldername(name))[1] = 'avatar' and ((storage.foldername(name))[2] = auth.uid()::text or public.is_admin()));
 
+-- ---------- watermark & Build Manager (anti-piracy ZIP export for partners) ----------
+alter table public.profiles add column if not exists partner_unique_id text unique;
+
+create table if not exists public.widget_builds (
+  id bigint generated always as identity primary key,
+  partner_id uuid references auth.users on delete set null,
+  partner_name text,
+  partner_unique_id text,
+  package_name text,
+  widget_slugs text[] not null default '{}',
+  widget_count int not null default 0,
+  status text not null default 'pending' check (status in ('pending','building','done','failed')),
+  total_batches int not null default 0,
+  completed_batches int not null default 0,
+  watermark_id text,
+  zip_path text,
+  zip_expires_at timestamptz,
+  error_message text,
+  built_by uuid references auth.users on delete set null,
+  built_by_name text,
+  built_at timestamptz not null default now()
+);
+alter table public.widget_builds enable row level security;
+drop policy if exists "widget_builds admin all" on public.widget_builds;
+create policy "widget_builds admin all" on public.widget_builds for all to authenticated
+  using (public.is_admin()) with check (public.is_admin());
+
+-- private bucket for the generated ZIPs; also stores per-widget temp files under tmp/<build id>/ while a batch runs
+insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
+values ('widget-builds', 'widget-builds', false, 209715200, array['application/zip', 'image/svg+xml'])
+on conflict (id) do update set public = false, file_size_limit = excluded.file_size_limit, allowed_mime_types = excluded.allowed_mime_types;
+
+drop policy if exists "widget_builds_zip admin all" on storage.objects;
+create policy "widget_builds_zip admin all" on storage.objects for all to authenticated
+  using (bucket_id = 'widget-builds' and public.is_admin())
+  with check (bucket_id = 'widget-builds' and public.is_admin());
+
+-- ---------- analytics: login history + download location ----------
+create table if not exists public.login_log (
+  id bigint generated always as identity primary key,
+  user_id uuid references auth.users on delete set null,
+  user_name text,
+  email text,
+  role text,
+  country text,
+  city text,
+  created_at timestamptz not null default now()
+);
+alter table public.login_log enable row level security;
+drop policy if exists "log own login" on public.login_log;
+create policy "log own login" on public.login_log for insert to authenticated with check (auth.uid() = user_id);
+drop policy if exists "admin read login_log" on public.login_log;
+create policy "admin read login_log" on public.login_log for select to authenticated using (public.is_admin());
+
+alter table public.downloads add column if not exists country text;
+alter table public.downloads add column if not exists city text;
+
 -- ---------- superadmin (change the email to your login email, then run this line once) ----------
 -- update public.profiles set role = 'superadmin', status = 'approved' where email = 'email-anda@contoh.com';
