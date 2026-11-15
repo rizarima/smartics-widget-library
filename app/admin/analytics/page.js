@@ -1,15 +1,18 @@
 import Link from 'next/link';
 import Icon from '@/components/Icon';
 import { requireAdmin } from '@/lib/admin';
-import { ROLE_LABEL } from '@/lib/roles';
+import { roleLabel } from '@/lib/roles';
+import { getT } from '@/lib/lang';
 
 export const dynamic = 'force-dynamic';
 const HISTORY_LIMIT = 2000; // enough for aggregation at this site's scale; raise if the user base grows a lot
 const where = place => place ? [place.city, place.city && place.country ? ', ' : '', place.country].filter(Boolean).join('') || '-' : '-';
-const fmt = d => new Date(d).toLocaleString('id-ID', { dateStyle: 'medium', timeStyle: 'short' });
 
 export default async function AdminAnalytics({ searchParams }) {
   const { db } = await requireAdmin('/admin/analytics');
+  const { lang, t } = getT();
+  const localeMap = { id: 'id-ID', en: 'en-US', vi: 'vi-VN' };
+  const fmt = d => new Date(d).toLocaleString(localeMap[lang] || 'id-ID', { dateStyle: 'medium', timeStyle: 'short' });
   const since30 = new Date(Date.now() - 30 * 864e5).toISOString();
   const loginUser = searchParams.lu || '', dlUser = searchParams.du || '', dlWidget = (searchParams.dw || '').trim();
 
@@ -49,44 +52,44 @@ export default async function AdminAnalytics({ searchParams }) {
   const filteredDownloads = (allDownloads || []).filter(d => (!dlUser || d.user_id === dlUser) && (!dlWidget || d.widget_slug.includes(dlWidget.toLowerCase()))).slice(0, 50);
 
   const cards = [
-    ['hourglass', 'tone-blue', logins30, `Login 30 hari (${loginsTotal} total)`],
-    ['download', 'tone-teal', downloads30, `Download 30 hari (${downloadsTotal} total)`],
-    ['person', 'tone-amber', uniqueLoginUsers, 'User pernah login'],
-    ['person', 'tone-purple', uniqueDownloadUsers, 'User pernah download'],
+    ['hourglass', 'tone-blue', logins30, t('adm.analytics.logins30', { n: loginsTotal })],
+    ['download', 'tone-teal', downloads30, t('adm.analytics.downloads30', { n: downloadsTotal })],
+    ['person', 'tone-amber', uniqueLoginUsers, t('adm.analytics.everLoggedIn')],
+    ['person', 'tone-purple', uniqueDownloadUsers, t('adm.analytics.everDownloaded')],
   ];
 
   return (
     <>
-      <div className="page-head"><div><h1>Analytics</h1><p>Login, download, dan asal akses (negara/kota berdasarkan IP — hanya akurat di produksi Vercel, bukan saat development lokal).</p></div></div>
-      <div className="stats">{cards.map(([i, t, n, l]) => <div key={l} className="stat"><span className={'tone ' + t}><Icon name={i} size={24} /></span><span><b>{n}</b><span>{l}</span></span></div>)}</div>
+      <div className="page-head"><div><h1>{t('adm.analytics.title')}</h1><p>{t('adm.analytics.lead')}</p></div></div>
+      <div className="stats">{cards.map(([i, tone, n, l]) => <div key={l} className="stat"><span className={'tone ' + tone}><Icon name={i} size={24} /></span><span><b>{n}</b><span>{l}</span></span></div>)}</div>
 
       <div className="grid cols-2">
         <div className="card">
-          <div className="section-head"><h2><Icon name="widgets" />Widget paling banyak diunduh</h2></div>
+          <div className="section-head"><h2><Icon name="widgets" />{t('adm.analytics.topWidgets')}</h2></div>
           <table className="table">
-            <thead><tr><th>Widget</th><th>Jumlah</th></tr></thead>
+            <thead><tr><th>{t('adm.analytics.colWidget')}</th><th>{t('adm.analytics.colCount')}</th></tr></thead>
             <tbody>
               {topWidgets.map(([slug, n]) => <tr key={slug}><td><Link href={`/widgets/${slug}`}>{slug}</Link></td><td>{n}</td></tr>)}
-              {!topWidgets.length && <tr><td colSpan={2} className="muted">Belum ada download.</td></tr>}
+              {!topWidgets.length && <tr><td colSpan={2} className="muted">{t('adm.analytics.noDownloads')}</td></tr>}
             </tbody>
           </table>
         </div>
         <div className="card">
-          <div className="section-head"><h2><Icon name="person" />Aktivitas per user</h2></div>
+          <div className="section-head"><h2><Icon name="person" />{t('adm.analytics.perUser')}</h2></div>
           <div style={{ overflowX: 'auto', maxHeight: 360, overflowY: 'auto' }}>
             <table className="table">
-              <thead><tr><th>User</th><th>Login</th><th>Download</th><th>Login terakhir</th><th>Lokasi terakhir</th></tr></thead>
+              <thead><tr><th>{t('adm.analytics.colUser')}</th><th>{t('adm.analytics.colLogins')}</th><th>{t('adm.analytics.colDownloads')}</th><th>{t('adm.analytics.colLastLogin')}</th><th>{t('adm.analytics.colLastLocation')}</th></tr></thead>
               <tbody>
                 {userRows.map(r => (
                   <tr key={r.id}>
-                    <td>{r.p.full_name || r.p.email}<br /><span className="muted small">{ROLE_LABEL[r.p.role] || r.p.role}</span></td>
+                    <td>{r.p.full_name || r.p.email}<br /><span className="muted small">{roleLabel(t, r.p.role)}</span></td>
                     <td>{r.logins}</td>
                     <td>{r.downloads}</td>
                     <td>{r.lastLogin ? fmt(r.lastLogin) : '-'}</td>
                     <td>{where(r.lastPlace)}</td>
                   </tr>
                 ))}
-                {!userRows.length && <tr><td colSpan={5} className="muted">Belum ada aktivitas.</td></tr>}
+                {!userRows.length && <tr><td colSpan={5} className="muted">{t('adm.analytics.noActivity')}</td></tr>}
               </tbody>
             </table>
           </div>
@@ -94,42 +97,42 @@ export default async function AdminAnalytics({ searchParams }) {
       </div>
 
       <div className="card" style={{ marginTop: 18 }}>
-        <div className="section-head"><h2><Icon name="login" />Riwayat login (50 terbaru)</h2></div>
+        <div className="section-head"><h2><Icon name="login" />{t('adm.analytics.loginHistory')}</h2></div>
         <form className="audit-filters" method="get">
           <input type="hidden" name="du" value={dlUser} /><input type="hidden" name="dw" value={dlWidget} />
-          <select name="lu" defaultValue={loginUser}><option value="">Semua user</option>{(people || []).map(p => <option key={p.id} value={p.id}>{p.full_name || p.email}</option>)}</select>
-          <button className="btn btn-sm btn-filled"><Icon name="search" size={16} />Filter</button>
-          {loginUser && <Link className="btn btn-sm btn-text" href={`/admin/analytics?du=${dlUser}&dw=${dlWidget}`}>Reset</Link>}
+          <select name="lu" defaultValue={loginUser}><option value="">{t('adm.analytics.allUsers')}</option>{(people || []).map(p => <option key={p.id} value={p.id}>{p.full_name || p.email}</option>)}</select>
+          <button className="btn btn-sm btn-filled"><Icon name="search" size={16} />{t('adm.analytics.filter')}</button>
+          {loginUser && <Link className="btn btn-sm btn-text" href={`/admin/analytics?du=${dlUser}&dw=${dlWidget}`}>{t('adm.analytics.reset')}</Link>}
         </form>
         <div style={{ overflowX: 'auto' }}>
           <table className="table">
-            <thead><tr><th>Waktu</th><th>User</th><th>Peran</th><th>Lokasi</th></tr></thead>
+            <thead><tr><th>{t('adm.request.colTime')}</th><th>{t('adm.analytics.colUser')}</th><th>{t('adm.analytics.colRole')}</th><th>{t('adm.analytics.colLocation')}</th></tr></thead>
             <tbody>
-              {filteredLogins.map((l, i) => <tr key={i}><td>{fmt(l.created_at)}</td><td>{l.user_name || l.email}</td><td>{ROLE_LABEL[l.role] || l.role}</td><td>{where(l)}</td></tr>)}
-              {!filteredLogins.length && <tr><td colSpan={4} className="muted">Belum ada catatan login.</td></tr>}
+              {filteredLogins.map((l, i) => <tr key={i}><td>{fmt(l.created_at)}</td><td>{l.user_name || l.email}</td><td>{roleLabel(t, l.role)}</td><td>{where(l)}</td></tr>)}
+              {!filteredLogins.length && <tr><td colSpan={4} className="muted">{t('adm.analytics.noLoginHistory')}</td></tr>}
             </tbody>
           </table>
         </div>
       </div>
 
       <div className="card" style={{ marginTop: 18 }}>
-        <div className="section-head"><h2><Icon name="download" />Riwayat download (50 terbaru)</h2></div>
+        <div className="section-head"><h2><Icon name="download" />{t('adm.analytics.downloadHistory')}</h2></div>
         <form className="audit-filters" method="get">
           <input type="hidden" name="lu" value={loginUser} />
-          <select name="du" defaultValue={dlUser}><option value="">Semua user</option>{(people || []).map(p => <option key={p.id} value={p.id}>{p.full_name || p.email}</option>)}</select>
-          <input name="dw" defaultValue={dlWidget} placeholder="Cari slug widget…" />
-          <button className="btn btn-sm btn-filled"><Icon name="search" size={16} />Filter</button>
-          {(dlUser || dlWidget) && <Link className="btn btn-sm btn-text" href={`/admin/analytics?lu=${loginUser}`}>Reset</Link>}
+          <select name="du" defaultValue={dlUser}><option value="">{t('adm.analytics.allUsers')}</option>{(people || []).map(p => <option key={p.id} value={p.id}>{p.full_name || p.email}</option>)}</select>
+          <input name="dw" defaultValue={dlWidget} placeholder={t('adm.analytics.searchWidgetPh')} />
+          <button className="btn btn-sm btn-filled"><Icon name="search" size={16} />{t('adm.analytics.filter')}</button>
+          {(dlUser || dlWidget) && <Link className="btn btn-sm btn-text" href={`/admin/analytics?lu=${loginUser}`}>{t('adm.analytics.reset')}</Link>}
         </form>
         <div style={{ overflowX: 'auto' }}>
           <table className="table">
-            <thead><tr><th>Waktu</th><th>User</th><th>Widget</th><th>Lokasi</th></tr></thead>
+            <thead><tr><th>{t('adm.request.colTime')}</th><th>{t('adm.analytics.colUser')}</th><th>{t('adm.analytics.colWidget')}</th><th>{t('adm.analytics.colLocation')}</th></tr></thead>
             <tbody>
               {filteredDownloads.map((d, i) => {
                 const p = peopleById.get(d.user_id);
                 return <tr key={i}><td>{fmt(d.created_at)}</td><td>{p?.full_name || p?.email || '-'}</td><td><Link href={`/widgets/${d.widget_slug}`}>{d.widget_slug}</Link></td><td>{where(d)}</td></tr>;
               })}
-              {!filteredDownloads.length && <tr><td colSpan={4} className="muted">Belum ada catatan download.</td></tr>}
+              {!filteredDownloads.length && <tr><td colSpan={4} className="muted">{t('adm.analytics.noDownloadHistory')}</td></tr>}
             </tbody>
           </table>
         </div>

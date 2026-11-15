@@ -48,7 +48,7 @@ export default async function WidgetDetail({ params }) {
             <h1>{w.name}</h1>
             <p style={{ marginTop: 0 }}>{w.description}</p>
             <p className="muted small">{t('w.file')} <code>{w.file_name}</code> · {t('w.added', { d: fmtDateL(lang, w.created_at) })}
-              {isAdmin && <> · <Icon name="person" size={13} /> diupload oleh {w.uploaded_by_name || OWNER_NAME}{w.updated_by_name && w.updated_by_name !== (w.uploaded_by_name || OWNER_NAME) ? `, terakhir diubah ${w.updated_by_name}` : ''}</>}</p>
+              {isAdmin && <> · <Icon name="person" size={13} /> {t('w.uploadedBy', { n: w.uploaded_by_name || OWNER_NAME })}{w.updated_by_name && w.updated_by_name !== (w.uploaded_by_name || OWNER_NAME) ? t('w.lastEditedBy', { n: w.updated_by_name }) : ''}</>}</p>
             <div className="actions">
               <DownloadArea user={user} slug={w.slug} t={t} />
               <RequestButton slug={w.slug} name={w.name} />

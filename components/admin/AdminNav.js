@@ -2,16 +2,24 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Icon from '../Icon';
-
-const ITEMS = [
-  ['/admin', 'Ringkasan', 'dashboard'], ['/admin/analytics', 'Analytics', 'eye'], ['/admin/partner', 'User & peran', 'person'], ['/admin/widget', 'Widget', 'widgets'],
-  ['/admin/konten/berita', 'Berita', 'news'], ['/admin/konten/package', 'Package', 'package'], ['/admin/konten/update', 'Update', 'update'], ['/admin/request', 'Request', 'chat'],
-  ['/admin/build', 'Build Manager', 'lock'], ['/admin/trace', 'Trace & Verify', 'search'],
-  ['/admin/audit', 'Audit trail', 'audit'],
-];
+import { useLang } from '../LangProvider';
 
 export default function AdminNav({ pending }) {
   const path = usePathname();
+  const { t } = useLang();
+  const ITEMS = [
+    ['/admin', t('adm.nav.ringkasan'), 'dashboard'],
+    ['/admin/analytics', t('adm.nav.analytics'), 'eye'],
+    ['/admin/partner', t('adm.nav.partner'), 'person'],
+    ['/admin/widget', t('adm.nav.widget'), 'widgets'],
+    ['/admin/konten/berita', t('type.berita.label'), 'news'],
+    ['/admin/konten/package', t('type.package.label'), 'package'],
+    ['/admin/konten/update', t('type.update.label'), 'update'],
+    ['/admin/request', t('adm.nav.request'), 'chat'],
+    ['/admin/build', t('adm.nav.build'), 'lock'],
+    ['/admin/trace', t('adm.nav.trace'), 'search'],
+    ['/admin/audit', t('adm.nav.audit'), 'audit'],
+  ];
   return (
     <nav className="side">
       {ITEMS.map(([href, label, icon]) => (
