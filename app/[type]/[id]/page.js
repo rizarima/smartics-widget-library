@@ -8,6 +8,9 @@ import { TYPES, itemTitle } from '@/lib/content-types';
 import { fmtDateL } from '@/lib/i18n';
 import { localizePost, localizeWidget, templateName } from '@/lib/i18n-data';
 import { getT } from '@/lib/lang';
+import { getCurrentUser, hasSupabase } from '@/lib/supabase-server';
+import { isAdminRole } from '@/lib/roles';
+import { OWNER_NAME } from '@/lib/site';
 
 export const dynamic = 'force-dynamic';
 
@@ -26,6 +29,8 @@ export default async function ContentDetail({ params }) {
   if (!raw) notFound();
   const x = localizePost(raw, lang);
   const widgets = params.type === 'package' ? await widgetsBySlugs(x.widget_slugs) : [];
+  const user = hasSupabase ? await getCurrentUser() : null;
+  const isAdmin = isAdminRole(user?.role);
   return (
     <>
       <article className="article">
@@ -36,6 +41,7 @@ export default async function ContentDetail({ params }) {
             <span className="chip"><Icon name="calendar" size={14} />{fmtDateL(lang, x.date)}</span>
             {x.version && <span className="chip">{tr('post.version', { v: x.version })}</span>}
             {x.template && <span className="chip t2">{templateName(lang, x.template)}</span>}
+            {isAdmin && <span className="chip"><Icon name="person" size={13} />{x.created_by_name || OWNER_NAME}</span>}
           </div>
           <h1>{itemTitle(x)}</h1>
           {x.description && <p className="muted" style={{ fontSize: 17, marginTop: 0 }}>{x.description}</p>}

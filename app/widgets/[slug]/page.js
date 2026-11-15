@@ -10,6 +10,7 @@ import { fmtDateL } from '@/lib/i18n';
 import { localizeWidget, widgetLabels, templateName } from '@/lib/i18n-data';
 import { getT } from '@/lib/lang';
 import { isAdminRole } from '@/lib/roles';
+import { OWNER_NAME } from '@/lib/site';
 import WidgetPropsAdmin from '@/components/admin/WidgetPropsAdmin';
 
 export const dynamic = 'force-dynamic';
@@ -47,7 +48,7 @@ export default async function WidgetDetail({ params }) {
             <h1>{w.name}</h1>
             <p style={{ marginTop: 0 }}>{w.description}</p>
             <p className="muted small">{t('w.file')} <code>{w.file_name}</code> · {t('w.added', { d: fmtDateL(lang, w.created_at) })}
-              {isAdmin && <> · <Icon name="person" size={13} /> {w.uploaded_by_name ? `diupload oleh ${w.uploaded_by_name}` : 'widget bawaan'}{w.updated_by_name && w.updated_by_name !== w.uploaded_by_name ? `, terakhir diubah ${w.updated_by_name}` : ''}</>}</p>
+              {isAdmin && <> · <Icon name="person" size={13} /> diupload oleh {w.uploaded_by_name || OWNER_NAME}{w.updated_by_name && w.updated_by_name !== (w.uploaded_by_name || OWNER_NAME) ? `, terakhir diubah ${w.updated_by_name}` : ''}</>}</p>
             <div className="actions">
               <DownloadArea user={user} slug={w.slug} t={t} />
               <RequestButton slug={w.slug} name={w.name} />

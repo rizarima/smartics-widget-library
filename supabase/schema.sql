@@ -52,6 +52,14 @@ alter table public.news add column if not exists image_path text;
 alter table public.updates add column if not exists image_path text;
 alter table public.packages add column if not exists image_path text;
 
+-- who created this post (name kept as text so it survives a deleted account)
+alter table public.news add column if not exists created_by uuid references auth.users on delete set null;
+alter table public.news add column if not exists created_by_name text;
+alter table public.updates add column if not exists created_by uuid references auth.users on delete set null;
+alter table public.updates add column if not exists created_by_name text;
+alter table public.packages add column if not exists created_by uuid references auth.users on delete set null;
+alter table public.packages add column if not exists created_by_name text;
+
 -- who uploaded / last changed a widget (name kept as text so it survives a deleted account)
 alter table public.widgets add column if not exists uploaded_by uuid references auth.users on delete set null;
 alter table public.widgets add column if not exists uploaded_by_name text;
