@@ -1,6 +1,7 @@
 import Icon from '@/components/Icon';
 import AdminNav from '@/components/admin/AdminNav';
 import { requireAdmin } from '@/lib/admin';
+import { getT } from '@/lib/lang';
 
 export const dynamic = 'force-dynamic';
 export const metadata = { title: 'Admin' };
@@ -8,11 +9,12 @@ export const metadata = { title: 'Admin' };
 export default async function AdminLayout({ children }) {
   const { db, reason } = await requireAdmin();
   if (!db) {
+    const { t } = getT();
     return (
       <div className="auth"><div className="card">
         <div className="auth-icon"><Icon name="admin" size={26} /></div>
-        <h1>Halaman admin</h1>
-        <p className="muted">{reason === 'nodb' ? 'Database Supabase belum dihubungkan, jadi halaman admin belum bisa dipakai.' : 'Halaman ini khusus admin. Minta admin mengubah peran akun Anda menjadi admin.'}</p>
+        <h1>{t('adm.title')}</h1>
+        <p className="muted">{reason === 'nodb' ? t('adm.nodb') : t('adm.notadmin')}</p>
       </div></div>
     );
   }

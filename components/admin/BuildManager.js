@@ -1,13 +1,11 @@
 'use client';
 import { useMemo, useState } from 'react';
 import Icon from '../Icon';
+import { useLang } from '../LangProvider';
 import { startBuild, runBuildBatch, getBuildDownloadUrl, rebuildFromHistory } from '@/lib/build-actions';
 import { BATCH_SIZE } from '@/lib/build-config';
 
-const STATUS_LABEL = { pending: 'Menunggu', building: 'Sedang build', done: 'Siap diunduh', failed: 'Gagal' };
-const fmtDate = d => new Date(d).toLocaleString('id-ID', { dateStyle: 'medium', timeStyle: 'short' });
-
-function ProgressBar({ completed, total, startedAt }) {
+function ProgressBar({ completed, total, startedAt, t }) {
   const pct = total ? Math.round((completed / total) * 100) : 0;
   const avgMs = completed > 0 ? (Date.now() - startedAt) / completed : null;
   const etaSec = avgMs && completed < total ? Math.round((avgMs * (total - completed)) / 1000) : 0;
@@ -15,13 +13,18 @@ function ProgressBar({ completed, total, startedAt }) {
     <div>
       <div className="progress-track"><div className="progress-fill" style={{ width: pct + '%' }} /></div>
       <p className="muted small" style={{ margin: '6px 0 0' }}>
-        Batch {Math.min(completed, total)} dari {total} ({pct}%){completed < total && etaSec > 0 ? ` — estimasi ${etaSec < 60 ? etaSec + ' detik' : Math.ceil(etaSec / 60) + ' menit'} lagi` : ''}
+        {t('adm.build.batchProgress', { c: Math.min(completed, total), t: total, p: pct })}
+        {completed < total && etaSec > 0 ? (etaSec < 60 ? t('adm.build.etaSec', { s: etaSec }) : t('adm.build.etaMin', { m: Math.ceil(etaSec / 60) })) : ''}
       </p>
     </div>
   );
 }
 
 export default function BuildManager({ widgets, packages, partners, builds: initialBuilds, hasSecret }) {
+  const { lang, t } = useLang();
+  const STATUS_LABEL = { pending: t('adm.build.statusPending'), building: t('adm.build.statusBuilding'), done: t('adm.build.statusDone'), failed: t('adm.build.statusFailed') };
+  const localeMap = { id: 'id-ID', en: 'en-US', vi: 'vi-VN' };
+  const fmtDate = d => new Date(d).toLocaleString(localeMap[lang] || 'id-ID', { dateStyle: 'medium', timeStyle: 'short' });
   const [partnerId, setPartnerId] = useState('');
   const [packageName, setPackageName] = useState('');
   const [selected, setSelected] = useState(new Set());
@@ -84,54 +87,54 @@ export default function BuildManager({ widgets, packages, partners, builds: init
 
   return (
     <>
-      <div className="page-head"><div><h1>Build Manager</h1><p>Compile widget ber-watermark untuk partner — setiap SVG disisipi ID tersembunyi sebelum di-zip.</p></div></div>
-      {!hasSecret && <div className="notice warn" style={{ marginBottom: 14 }}><Icon name="warning" size={18} />WATERMARK_SECRET belum diatur di Vercel env — tambahkan dulu (string acak panjang) sebelum build pertama.</div>}
+      <div className="page-head"><div><h1>{t('adm.build.title')}</h1><p>{t('adm.build.lead')}</p></div></div>
+      {!hasSecret && <div className="notice warn" style={{ marginBottom: 14 }}><Icon name="warning" size={18} />{t('adm.build.secretWarn')}</div>}
       {err && <div className="notice err" style={{ marginBottom: 14 }}>{err}</div>}
 
       <div className="card" style={{ marginBottom: 20 }}>
         <div className="actions" style={{ marginTop: 0 }}>
           <select value={partnerId} onChange={e => setPartnerId(e.target.value)} style={{ minWidth: 220 }}>
-            <option value="">Pilih partner…</option>
+            <option value="">{t('adm.build.pickPartner')}</option>
             {partners.map(p => <option key={p.id} value={p.id}>{p.full_name || p.email}{p.partner_unique_id ? ` (${p.partner_unique_id})` : ''}</option>)}
           </select>
           <select defaultValue="" onChange={e => pickPackage(e.target.value)} style={{ minWidth: 200 }}>
-            <option value="">Isi dari package…</option>
-            {packages.map(p => <option key={p.id} value={p.id}>{p.name} ({p.widget_slugs.length} widget)</option>)}
+            <option value="">{t('adm.build.pickPackage')}</option>
+            {packages.map(p => <option key={p.id} value={p.id}>{p.name} ({p.widget_slugs.length})</option>)}
           </select>
-          <input placeholder="Nama paket (opsional, buat catatan)" value={packageName} onChange={e => setPackageName(e.target.value)} style={{ minWidth: 200 }} />
+          <input placeholder={t('adm.build.packageNamePh')} value={packageName} onChange={e => setPackageName(e.target.value)} style={{ minWidth: 200 }} />
         </div>
 
-        <input placeholder="Cari widget…" value={q} onChange={e => setQ(e.target.value)} style={{ marginBottom: 10 }} />
+        <input placeholder={t('adm.build.searchWidgetPh')} value={q} onChange={e => setQ(e.target.value)} style={{ marginBottom: 10 }} />
         <div className="checks" style={{ maxHeight: 260, overflowY: 'auto', display: 'block' }}>
           {filtered.map(w => (
             <label key={w.slug} style={{ display: 'inline-flex', margin: '2px 4px' }}>
               <input type="checkbox" checked={selected.has(w.slug)} onChange={() => toggle(w.slug)} />{w.name}
             </label>
           ))}
-          {!filtered.length && <span className="muted">Tidak ada widget cocok.</span>}
+          {!filtered.length && <span className="muted">{t('adm.build.noWidgetsMatch')}</span>}
         </div>
 
         <div className="actions" style={{ alignItems: 'center' }}>
           <button className="btn btn-filled" disabled={busy || !partnerId || !selected.size} onClick={start}>
-            <Icon name="lock" size={16} />Mulai Build ({selected.size} widget{selected.size > BATCH_SIZE ? `, ${Math.ceil(selected.size / BATCH_SIZE)} batch` : ''})
+            <Icon name="lock" size={16} />{t('adm.build.start')}{selected.size > BATCH_SIZE ? t('adm.build.nWidgetsBatches', { n: selected.size, b: Math.ceil(selected.size / BATCH_SIZE) }) : t('adm.build.nWidgets', { n: selected.size })}
           </button>
-          {selected.size > 0 && <button className="btn btn-text" disabled={busy} onClick={() => setSelected(new Set())}>Kosongkan pilihan</button>}
+          {selected.size > 0 && <button className="btn btn-text" disabled={busy} onClick={() => setSelected(new Set())}>{t('adm.build.clearSelection')}</button>}
         </div>
 
         {run && (
           <div className="card-flat" style={{ marginTop: 12 }}>
-            <ProgressBar completed={run.completed} total={run.total} startedAt={run.startedAt} />
-            {run.status === 'done' && run.zipUrl && <a className="btn btn-sm btn-filled" href={run.zipUrl} target="_blank" rel="noreferrer" style={{ marginTop: 10 }}><Icon name="download" size={16} />Download ZIP</a>}
-            {run.status === 'failed' && <p className="notice err" style={{ marginTop: 10 }}>Build gagal, lihat pesan error di atas.</p>}
+            <ProgressBar completed={run.completed} total={run.total} startedAt={run.startedAt} t={t} />
+            {run.status === 'done' && run.zipUrl && <a className="btn btn-sm btn-filled" href={run.zipUrl} target="_blank" rel="noreferrer" style={{ marginTop: 10 }}><Icon name="download" size={16} />{t('adm.build.download')}</a>}
+            {run.status === 'failed' && <p className="notice err" style={{ marginTop: 10 }}>{t('adm.build.failed')}</p>}
           </div>
         )}
       </div>
 
       <div className="card">
-        <h2 style={{ marginTop: 0 }}>Riwayat build</h2>
+        <h2 style={{ marginTop: 0 }}>{t('adm.build.history')}</h2>
         <div style={{ overflowX: 'auto' }}>
           <table className="table">
-            <thead><tr><th>Waktu</th><th>Partner</th><th>Paket</th><th>Jumlah widget</th><th>Status</th><th>Aksi</th></tr></thead>
+            <thead><tr><th>{t('adm.build.colTime')}</th><th>{t('adm.build.colPartner')}</th><th>{t('adm.build.colPackage')}</th><th>{t('adm.build.colCount')}</th><th>{t('adm.build.colStatus')}</th><th>{t('adm.build.colAction')}</th></tr></thead>
             <tbody>
               {builds.map(b => (
                 <tr key={b.id}>
@@ -141,12 +144,12 @@ export default function BuildManager({ widgets, packages, partners, builds: init
                   <td>{b.widget_count}</td>
                   <td><span className={'chip ' + (b.status === 'done' ? 'ok' : b.status === 'failed' ? 'warn' : '')}>{STATUS_LABEL[b.status] || b.status}</span></td>
                   <td className="row-actions">
-                    {b.status === 'done' && b.zip_path && <button className="btn btn-sm" onClick={() => download(b.id)}><Icon name="download" size={14} />Unduh</button>}
-                    {b.status === 'done' && !b.zip_path && <button className="btn btn-sm" disabled={busy} onClick={() => rebuild(b.id)}>ZIP sudah expired — Build ulang</button>}
+                    {b.status === 'done' && b.zip_path && <button className="btn btn-sm" onClick={() => download(b.id)}><Icon name="download" size={14} />{t('adm.build.downloadBtn')}</button>}
+                    {b.status === 'done' && !b.zip_path && <button className="btn btn-sm" disabled={busy} onClick={() => rebuild(b.id)}>{t('adm.build.expiredRebuild')}</button>}
                   </td>
                 </tr>
               ))}
-              {!builds.length && <tr><td colSpan={6} className="muted">Belum ada riwayat build.</td></tr>}
+              {!builds.length && <tr><td colSpan={6} className="muted">{t('adm.build.noHistory')}</td></tr>}
             </tbody>
           </table>
         </div>

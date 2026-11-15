@@ -2,14 +2,16 @@ import Link from 'next/link';
 import Icon from '@/components/Icon';
 import AuditRow from '@/components/admin/AuditRow';
 import { requireAdmin } from '@/lib/admin';
-import { ENTITY_LABEL } from '@/lib/audit-labels';
-import { ROLE_LABEL } from '@/lib/roles';
+import { entityLabel } from '@/lib/audit-labels';
+import { roleLabel } from '@/lib/roles';
+import { getT } from '@/lib/lang';
 
 export const dynamic = 'force-dynamic';
 const PER = 50;
 
 export default async function AuditTrail({ searchParams }) {
   const { db } = await requireAdmin('/admin/audit');
+  const { t } = getT();
   const entity = searchParams.entity || '', actor = searchParams.actor || '', q = (searchParams.q || '').trim();
   const page = Math.max(1, parseInt(searchParams.page || '1', 10) || 1);
 
@@ -23,34 +25,35 @@ export default async function AuditTrail({ searchParams }) {
   ]);
   const pages = Math.max(1, Math.ceil((count || 0) / PER));
   const link = p => '/admin/audit?' + new URLSearchParams({ ...(entity && { entity }), ...(actor && { actor }), ...(q && { q }), page: String(p) });
+  const ENTITIES = ['user', 'news', 'packages', 'updates', 'widget', 'profile'];
 
   return (
     <>
-      <div className="page-head"><div><h1>Audit trail</h1><p>Catatan siapa melakukan apa pada record (user, widget, berita, package, update, profil). Hanya admin dan superadmin yang bisa melihat, dan catatan tidak bisa diubah atau dihapus dari website.</p></div></div>
-      {error && <div className="notice err" style={{ marginBottom: 12 }}>Audit trail belum bisa dibaca: {error.message}. Jalankan ulang <code>supabase/schema.sql</code> di Supabase.</div>}
+      <div className="page-head"><div><h1>{t('adm.audit.title')}</h1><p>{t('adm.audit.lead')}</p></div></div>
+      {error && <div className="notice err" style={{ marginBottom: 12 }}>{t('adm.audit.readError', { e: error.message })}</div>}
       <div className="card">
         <form className="audit-filters" method="get">
-          <select name="entity" defaultValue={entity} aria-label="Jenis record"><option value="">Semua record</option>{Object.entries(ENTITY_LABEL).map(([k, l]) => <option key={k} value={k}>{l}</option>)}</select>
-          <select name="actor" defaultValue={actor} aria-label="Pelaku"><option value="">Semua orang</option>{(people || []).map(p => <option key={p.id} value={p.id}>{p.full_name || p.email} · {ROLE_LABEL[p.role] || p.role}</option>)}</select>
-          <input name="q" defaultValue={q} placeholder="Cari judul, nama, slug…" style={{ flex: 1, minWidth: 160 }} />
-          <button className="btn btn-sm btn-filled"><Icon name="search" size={16} />Terapkan</button>
-          {(entity || actor || q) && <Link className="btn btn-sm btn-text" href="/admin/audit">Reset</Link>}
+          <select name="entity" defaultValue={entity} aria-label={t('adm.audit.colRecord')}><option value="">{t('adm.audit.allRecords')}</option>{ENTITIES.map(k => <option key={k} value={k}>{entityLabel(t, k)}</option>)}</select>
+          <select name="actor" defaultValue={actor} aria-label={t('adm.audit.colWho')}><option value="">{t('adm.audit.allPeople')}</option>{(people || []).map(p => <option key={p.id} value={p.id}>{p.full_name || p.email} · {roleLabel(t, p.role)}</option>)}</select>
+          <input name="q" defaultValue={q} placeholder={t('adm.audit.searchPh')} style={{ flex: 1, minWidth: 160 }} />
+          <button className="btn btn-sm btn-filled"><Icon name="search" size={16} />{t('adm.audit.apply')}</button>
+          {(entity || actor || q) && <Link className="btn btn-sm btn-text" href="/admin/audit">{t('adm.audit.reset')}</Link>}
         </form>
         <div style={{ overflowX: 'auto' }}>
           <table className="table">
-            <thead><tr><th>Waktu (WIB)</th><th>Siapa</th><th>Aksi</th><th>Record</th></tr></thead>
+            <thead><tr><th>{t('adm.audit.colTime')}</th><th>{t('adm.audit.colWho')}</th><th>{t('adm.audit.colAction')}</th><th>{t('adm.audit.colRecord')}</th></tr></thead>
             <tbody>
               {(data || []).map(e => <AuditRow key={e.id} e={e} />)}
-              {!data?.length && <tr><td colSpan={4} className="muted">Belum ada catatan.</td></tr>}
+              {!data?.length && <tr><td colSpan={4} className="muted">{t('adm.audit.none')}</td></tr>}
             </tbody>
           </table>
         </div>
         {pages > 1 && (
           <div className="actions" style={{ justifyContent: 'space-between', alignItems: 'center', marginBottom: 0 }}>
-            <span className="muted small">{count} catatan · halaman {page} dari {pages}</span>
+            <span className="muted small">{t('adm.audit.nRecords', { n: count, p: page, t: pages })}</span>
             <span className="row-actions">
-              {page > 1 && <Link className="btn btn-sm" href={link(page - 1)}>Sebelumnya</Link>}
-              {page < pages && <Link className="btn btn-sm" href={link(page + 1)}>Berikutnya</Link>}
+              {page > 1 && <Link className="btn btn-sm" href={link(page - 1)}>{t('adm.audit.prev')}</Link>}
+              {page < pages && <Link className="btn btn-sm" href={link(page + 1)}>{t('adm.audit.next')}</Link>}
             </span>
           </div>
         )}
