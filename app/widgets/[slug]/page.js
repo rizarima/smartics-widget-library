@@ -9,6 +9,8 @@ import Icon, { CAT_ICON } from '@/components/Icon';
 import { fmtDateL } from '@/lib/i18n';
 import { localizeWidget, widgetLabels, templateName } from '@/lib/i18n-data';
 import { getT } from '@/lib/lang';
+import { isAdminRole } from '@/lib/roles';
+import WidgetPropsAdmin from '@/components/admin/WidgetPropsAdmin';
 
 export const dynamic = 'force-dynamic';
 
@@ -25,9 +27,11 @@ function DownloadArea({ user, slug, t }) {
 
 export default async function WidgetDetail({ params }) {
   const { lang, t } = getT();
-  const w = localizeWidget(await getWidget(params.slug), lang);
+  const raw = await getWidget(params.slug);
+  const w = localizeWidget(raw, lang);
   if (!w) notFound();
   const [user, related] = await Promise.all([hasSupabase ? getCurrentUser() : null, relatedWidgets(w)]);
+  const isAdmin = isAdminRole(user?.role);
   return (
     <>
       <div className="crumbs"><Link href="/widgets">{t('nav.widgets')}</Link><Icon name="arrow" size={14} /><Link href={`/widgets?cat=${encodeURIComponent(w.categories[0])}`}>{w.categories[0]}</Link><Icon name="arrow" size={14} /><span>{w.name}</span></div>
@@ -42,7 +46,8 @@ export default async function WidgetDetail({ params }) {
             </div>
             <h1>{w.name}</h1>
             <p style={{ marginTop: 0 }}>{w.description}</p>
-            <p className="muted small">{t('w.file')} <code>{w.file_name}</code> · {t('w.added', { d: fmtDateL(lang, w.created_at) })}</p>
+            <p className="muted small">{t('w.file')} <code>{w.file_name}</code> · {t('w.added', { d: fmtDateL(lang, w.created_at) })}
+              {isAdmin && <> · <Icon name="person" size={13} /> {w.uploaded_by_name ? `diupload oleh ${w.uploaded_by_name}` : 'widget bawaan'}{w.updated_by_name && w.updated_by_name !== w.uploaded_by_name ? `, terakhir diubah ${w.updated_by_name}` : ''}</>}</p>
             <div className="actions">
               <DownloadArea user={user} slug={w.slug} t={t} />
               <RequestButton slug={w.slug} name={w.name} />
@@ -53,6 +58,7 @@ export default async function WidgetDetail({ params }) {
           <div className="card">
             <div className="section-head"><h2><Icon name="edit" />{t('w.properties')}</h2></div>
             <p className="muted small" style={{ marginTop: -6 }}>{t('w.propsNote')}</p>
+            {isAdmin && <WidgetPropsAdmin slug={raw.slug} properties={raw.properties || []} />}
             <div style={{ overflowX: 'auto' }}>
               <table className="props">
                 <thead><tr><th>{t('w.colProp')}</th><th>{t('w.colType')}</th><th>{t('w.colDesc')}</th></tr></thead>
@@ -61,7 +67,7 @@ export default async function WidgetDetail({ params }) {
                     <tr key={p.name}>
                       <td><b>{p.label}</b><br /><code>{p.name}</code></td>
                       <td className="small">{p.type}{p.default != null && p.default !== '' ? <><br /><span className="muted">default: {String(p.default)}</span></> : null}</td>
-                      <td className="small">{p.desc}</td>
+                      <td className="small">{p.desc || <span className="muted-dash">–</span>}</td>
                     </tr>
                   ))}
                 </tbody>

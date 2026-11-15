@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Icon from '@/components/Icon';
 import { requireAdmin } from '@/lib/admin';
 import { allWidgets } from '@/lib/data';
+import { ACTION_LABEL } from '@/lib/audit-labels';
 
 export const dynamic = 'force-dynamic';
 
@@ -9,13 +10,14 @@ export default async function AdminHome() {
   const { db } = await requireAdmin();
   const count = async (t, f) => { let q = db.from(t).select('*', { count: 'exact', head: true }); if (f) q = f(q); return (await q).count || 0; };
   const since = new Date(Date.now() - 30 * 864e5).toISOString();
-  const [pending, partners, requests, downloads, widgets, recent] = await Promise.all([
+  const [pending, partners, requests, downloads, widgets, recent, activity] = await Promise.all([
     count('profiles', q => q.eq('role', 'partner').eq('status', 'pending')),
     count('profiles', q => q.eq('role', 'partner').eq('status', 'approved')),
     count('widget_requests', q => q.gte('created_at', since)),
     count('downloads', q => q.gte('created_at', since)),
     allWidgets(),
     db.from('downloads').select('widget_slug, created_at').order('created_at', { ascending: false }).limit(8),
+    db.from('audit_log').select('id, created_at, actor_name, action, summary').order('created_at', { ascending: false }).limit(8),
   ]);
   const cards = [
     ['/admin/partner', 'hourglass', 'tone-amber', pending, 'Partner menunggu persetujuan'],
@@ -42,6 +44,10 @@ export default async function AdminHome() {
           <div className="section-head"><h2><Icon name="download" />Download terakhir</h2></div>
           {recent.data?.length ? <ul className="feed">{recent.data.map((d, i) => <li key={i}><Link href={`/widgets/${d.widget_slug}`}><span><b>{d.widget_slug}</b><span className="meta">{new Date(d.created_at).toLocaleString('id-ID')}</span></span></Link></li>)}</ul> : <p className="muted">Belum ada download.</p>}
         </div>
+      </div>
+      <div className="card" style={{ marginTop: 18 }}>
+        <div className="section-head"><h2><Icon name="audit" />Aktivitas terakhir</h2><Link className="link-more" href="/admin/audit">Lihat audit trail<Icon name="arrow" size={16} /></Link></div>
+        {activity.data?.length ? <ul className="feed">{activity.data.map(a => <li key={a.id}><Link href="/admin/audit"><span><b>{a.actor_name || 'Sistem'}</b> · {ACTION_LABEL[a.action] || a.action}{a.summary ? `: ${a.summary}` : ''}<span className="meta">{new Date(a.created_at).toLocaleString('id-ID', { timeZone: 'Asia/Jakarta' })}</span></span></Link></li>)}</ul> : <p className="muted">Belum ada aktivitas tercatat.</p>}
       </div>
     </>
   );

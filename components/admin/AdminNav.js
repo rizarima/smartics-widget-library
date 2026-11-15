@@ -5,7 +5,7 @@ import Icon from '../Icon';
 
 const ITEMS = [
   ['/admin', 'Ringkasan', 'dashboard'], ['/admin/partner', 'User & peran', 'person'], ['/admin/widget', 'Widget', 'widgets'],
-  ['/admin/konten/berita', 'Berita', 'news'], ['/admin/konten/package', 'Package', 'package'], ['/admin/konten/update', 'Update', 'update'], ['/admin/request', 'Request', 'chat'],
+  ['/admin/konten/berita', 'Berita', 'news'], ['/admin/konten/package', 'Package', 'package'], ['/admin/konten/update', 'Update', 'update'], ['/admin/request', 'Request', 'chat'], ['/admin/audit', 'Audit trail', 'audit'],
 ];
 
 export default function AdminNav({ pending }) {

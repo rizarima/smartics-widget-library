@@ -237,7 +237,7 @@ a.pkg:hover { background: var(--surface); box-shadow: var(--e2); text-decoration
 .status.approved { background: var(--ok-container); color: var(--ok); }
 .status.rejected { background: var(--danger-container); color: var(--danger); }
 .row-actions { display: flex; gap: 6px; flex-wrap: wrap; }
-.dropzone { border: 2px dashed var(--outline); border-radius: var(--r); padding: 28px; text-align: center; background: var(--surface-1); cursor: pointer; }
+.dropzone { display: block; border: 2px dashed var(--outline); border-radius: var(--r); padding: 28px; text-align: center; background: var(--surface-1); cursor: pointer; }
 .dropzone:hover { border-color: var(--primary); }
 .upl { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 14px; align-items: start; padding: 14px; border-radius: 14px; background: var(--surface-1); }
 .upl img { width: 96px; height: 96px; background: var(--thumb); border-radius: 10px; padding: 8px; object-fit: contain; }
@@ -262,3 +262,69 @@ a.pkg:hover { background: var(--surface); box-shadow: var(--e2); text-decoration
 /* language switch */
 .lang.seg button { padding: 5px 9px; font-size: 12px; font-weight: 650; }
 @media (max-width: 720px) { .lang.seg button { padding: 4px 7px; } }
+
+/* profile, avatars */
+.me { display: flex; align-items: center; gap: 8px; color: inherit; border-radius: 999px; padding: 2px 8px 2px 2px; }
+.me:hover { background: var(--surface-1); text-decoration: none; }
+.avatar { overflow: hidden; flex: none; }
+.avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.avatar.lg { width: 96px; height: 96px; font-size: 36px; }
+.avatar.sm { width: 26px; height: 26px; font-size: 11px; }
+.profile { max-width: 760px; margin: 0 auto; display: grid; gap: 18px; }
+.profile .card { padding: 24px; }
+.profile h2 { margin: 0 0 14px; font-size: 1.1rem; display: flex; align-items: center; gap: 8px; }
+.profile h2 .ic { color: var(--primary); }
+.photo-row { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
+.photo-row .actions { margin: 0; }
+
+/* image upload field */
+.imgfield { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 14px; align-items: center; padding: 12px; border: 1px dashed var(--outline); border-radius: 14px; background: var(--surface-1); }
+.imgfield .ph { width: 180px; aspect-ratio: 16 / 10; border-radius: 10px; background: var(--surface-2) center / cover no-repeat; display: grid; place-items: center; color: var(--muted); }
+.imgfield .actions { margin: 6px 0 0; }
+@media (max-width: 600px) { .imgfield { grid-template-columns: 1fr; } .imgfield .ph { width: 100%; } }
+
+/* widget upload cards */
+.upl-list { display: grid; gap: 12px; margin-top: 16px; }
+.upl-card { border: 1px solid var(--outline); border-radius: 16px; background: var(--surface); overflow: hidden; }
+.upl-head { display: grid; grid-template-columns: 72px minmax(0, 1fr) auto; gap: 14px; align-items: center; padding: 12px 14px; background: var(--surface-1); }
+.upl-head img { width: 72px; height: 72px; background: var(--thumb); border-radius: 10px; padding: 6px; object-fit: contain; }
+.upl-head h3 { margin: 0 0 4px; font-size: 15px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.upl-head .chips { gap: 6px; }
+.upl-body { padding: 14px; display: grid; gap: 12px; }
+.upl-body .form { gap: 12px; }
+.chip.warn { background: var(--warn-container); color: var(--warn); }
+.chip.ok { background: var(--ok-container); color: var(--ok); }
+details.props-box { border: 1px solid var(--outline); border-radius: 12px; }
+details.props-box > summary { cursor: pointer; padding: 10px 12px; font-weight: 600; font-size: 13.5px; display: flex; gap: 8px; align-items: center; }
+details.props-box > div { padding: 0 12px 12px; }
+.prop-edit { width: 100%; border-collapse: collapse; font-size: 13px; }
+.prop-edit th { text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); padding: 6px; }
+.prop-edit td { padding: 6px; border-top: 1px solid var(--outline); vertical-align: top; }
+.prop-edit td:first-child { width: 28%; }
+.prop-edit input, .prop-edit textarea { width: 100%; min-width: 0; font-size: 13px; }
+.prop-edit tr.todo td { background: color-mix(in srgb, var(--warn-container) 55%, transparent); }
+.muted-dash { color: var(--muted); }
+@media (max-width: 600px) { .upl-head { grid-template-columns: 56px minmax(0, 1fr) auto; } .upl-head img { width: 56px; height: 56px; } .prop-edit td:first-child { width: auto; } .prop-edit, .prop-edit tbody, .prop-edit tr, .prop-edit td { display: block; } .prop-edit thead { display: none; } }
+
+/* audit trail */
+.audit-filters { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 12px; }
+.audit-filters select, .audit-filters input { min-width: 0; }
+.who-cell { display: flex; align-items: center; gap: 8px; }
+.role-chip { font-size: 11px; padding: 1px 8px; border-radius: 999px; background: var(--surface-2); color: var(--muted); font-weight: 600; }
+.role-chip.r-superadmin { background: #f3e1ff; color: #6b1fa3; }
+.role-chip.r-admin { background: var(--primary-container); color: var(--on-primary-container); }
+.role-chip.r-member { background: var(--tertiary-container); color: var(--tertiary); }
+@media (prefers-color-scheme: dark) { .role-chip.r-superadmin { background: #3b1a52; color: #e6c2ff; } }
+.audit-details { font-size: 12px; margin: 4px 0 0; }
+.audit-details summary { cursor: pointer; color: var(--primary); }
+.audit-details table { border-collapse: collapse; margin-top: 4px; }
+.audit-details td { padding: 2px 8px 2px 0; vertical-align: top; border: 0; }
+.audit-details del { color: var(--danger); }
+.audit-details ins { color: var(--ok); text-decoration: none; }
+.prop-edit textarea { min-height: 38px; resize: vertical; }
+.upl-body textarea { min-height: 64px; }
+.admin-box { display: grid; gap: 10px; margin-bottom: 12px; padding: 12px; border-radius: 12px; border: 1px dashed var(--primary); background: var(--surface-1); }
+.form label.btn { display: inline-flex; gap: 8px; font-weight: 600; }
+.form .field { display: grid; gap: 5px; font-size: 13.5px; font-weight: 600; }
+.checks label > input { width: auto; flex: none; }
+.checks label { white-space: nowrap; }

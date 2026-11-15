@@ -22,11 +22,15 @@ npm run dev                  # buka http://localhost:3000
 3. **GitHub**: push folder ini ke repository GitHub.
 4. **Vercel**: Add New → Project → pilih repository → Environment Variables: `NEXT_PUBLIC_SUPABASE_URL` dan `NEXT_PUBLIC_SUPABASE_ANON_KEY` → Deploy.
 
-## Akun
+## Akun & peran
 
-- **Partner**: daftar sendiri di `/daftar-partner`, langsung bisa download.
-- **Member SmartICS**: buat di Supabase → Authentication → Users → Add user, lalu di tabel `profiles` ubah `role` menjadi `member` (atau `admin`).
-- Data pendaftar ada di tabel `profiles`, request WhatsApp di `widget_requests`, dan riwayat download di `downloads`.
+- **Superadmin**: pemilik, bisa semua termasuk mengatur akun admin. Set sekali lewat SQL Editor (baris terakhir `supabase/schema.sql`).
+- **Admin**: engineer SmartICS. Bisa membuka /admin (widget, berita, package, update, partner, member, audit trail), tapi tidak bisa mengubah akun admin/superadmin.
+- **Member**: sales SmartICS, bisa download.
+- **Partner**: daftar sendiri di `/daftar-partner`, bisa download setelah disetujui admin atau superadmin.
+- Setiap akun punya halaman `/profil` untuk ganti nama, foto, email, dan password.
+- Gambar (sampul berita/package/update dan foto profil) disimpan di Supabase Storage bucket `images`; file ikut terhapus saat record dihapus atau gambarnya diganti.
+- Semua perubahan record tercatat di tabel `audit_log` (Admin > Audit trail).
 
 ## Mengubah isi
 

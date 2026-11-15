@@ -4,6 +4,7 @@ import { getT } from '@/lib/lang';
 import NavLinks from './NavLinks';
 import LangSwitch from './LangSwitch';
 import Icon from './Icon';
+import { isAdminRole } from '@/lib/roles';
 
 export default async function Header() {
   const user = hasSupabase ? await getCurrentUser() : null;
@@ -15,13 +16,15 @@ export default async function Header() {
           <span className="logo"><Icon name="widgets" size={20} /></span>
           <span>SmartICS<small>Widget Library</small></span>
         </Link>
-        <NavLinks admin={user?.role === 'admin'} />
+        <NavLinks admin={isAdminRole(user?.role)} />
         <div className="user">
           <LangSwitch />
           {user ? (
             <>
-              <span className="avatar" title={user.email}>{(user.name || '?').trim()[0].toUpperCase()}</span>
-              <span className="who"><b>{user.name}</b><span className="muted">{t('role.' + user.role)}{user.role === 'partner' && user.status !== 'approved' ? t('role.pending') : ''}</span></span>
+              <Link href="/profil" className="me" title={t('nav.profile')}>
+                <span className="avatar">{user.avatar ? <img src={user.avatar} alt="" /> : (user.name || '?').trim()[0].toUpperCase()}</span>
+                <span className="who"><b>{user.name}</b><span className="muted">{t('role.' + user.role)}{user.role === 'partner' && user.status !== 'approved' ? t('role.pending') : ''}</span></span>
+              </Link>
               <form action="/auth/signout" method="post"><button className="btn btn-text btn-icon" title={t('nav.logout')} aria-label={t('nav.logout')}><Icon name="logout" /></button></form>
             </>
           ) : (

@@ -5,6 +5,8 @@ import Link from 'next/link';
 import Icon from '../Icon';
 import { saveContent, deleteContent, importSampleContent } from '@/lib/admin-actions';
 import { CATEGORIES } from '@/lib/site';
+import { supabaseBrowser } from '@/lib/supabase-browser';
+import { BUCKET, IMAGE_ACCEPT, IMAGE_HINT, checkImage, uploadImage } from '@/lib/images';
 
 const today = () => new Date().toISOString().slice(0, 10);
 
@@ -26,6 +28,35 @@ function WidgetPicker({ widgets, value, onChange }) {
   );
 }
 
+// cover image: picked here, uploaded to Storage only when the form is saved
+function ImageField({ edit, setEdit }) {
+  const [err, setErr] = useState('');
+  const shown = edit._preview || (!edit._remove && edit.image_url) || null;
+  const pick = e => {
+    const f = e.target.files?.[0];
+    e.target.value = '';
+    if (!f) return;
+    const c = checkImage(f);
+    if (c.error) return setErr(c.error);
+    setErr('');
+    setEdit(x => ({ ...x, _file: f, _preview: URL.createObjectURL(f), _remove: false }));
+  };
+  return (
+    <div className="imgfield">
+      <div className="ph" style={shown ? { backgroundImage: `url("${shown}")` } : null}>{!shown && <Icon name="image" size={36} />}</div>
+      <div>
+        <b style={{ fontSize: 13.5 }}>Gambar sampul</b>
+        <div className="muted small">{edit._file ? `${edit._file.name} (${(edit._file.size / 1048576).toFixed(2)} MB), diupload saat disimpan` : IMAGE_HINT}</div>
+        <div className="actions">
+          <label className="btn btn-sm btn-tonal" style={{ cursor: 'pointer' }}><Icon name="upload" size={16} />{shown ? 'Ganti gambar' : 'Upload gambar'}<input type="file" accept={IMAGE_ACCEPT} hidden onChange={pick} /></label>
+          {shown && <button type="button" className="btn btn-sm btn-text btn-danger" onClick={() => setEdit(x => ({ ...x, _file: null, _preview: null, _remove: true }))}><Icon name="delete" size={16} />Hapus</button>}
+        </div>
+        {err && <div className="notice err" style={{ marginTop: 8 }}>{err}</div>}
+      </div>
+    </div>
+  );
+}
+
 export default function ContentAdmin({ type, label, items, widgets, openNew }) {
   const router = useRouter();
   const [busy, start] = useTransition();
@@ -34,6 +65,22 @@ export default function ContentAdmin({ type, label, items, widgets, openNew }) {
   const isPkg = type === 'package';
   const set = k => e => setEdit({ ...edit, [k]: e.target.value });
   const run = (fn, after) => start(async () => { const r = await fn(); if (!r.ok) setErr(r.error); else { setErr(''); after?.(); router.refresh(); } });
+  // upload the new cover first; if saving the post fails, the uploaded file is removed again
+  const save = () => start(async () => {
+    const { _file, _preview, _remove, image_url, image_path, ...item } = edit;
+    let path = null;
+    try {
+      if (_file) path = await uploadImage(supabaseBrowser(), type, _file);
+    } catch (e) { return setErr(e.message); }
+    const r = await saveContent(type, { ...item, ...(path ? { image_path: path } : _remove ? { removeImage: true } : {}) });
+    if (!r.ok) {
+      if (path) await supabaseBrowser().storage.from(BUCKET).remove([path]);
+      return setErr(r.error);
+    }
+    setErr('');
+    setEdit(null);
+    router.refresh();
+  });
 
   return (
     <>
@@ -50,21 +97,22 @@ export default function ContentAdmin({ type, label, items, widgets, openNew }) {
       )}
       <div className="card" style={{ overflowX: 'auto' }}>
         <table className="table">
-          <thead><tr><th>Tanggal</th><th>Judul</th>{isPkg && <th>Widget</th>}<th>Aksi</th></tr></thead>
+          <thead><tr><th></th><th>Tanggal</th><th>Judul</th>{isPkg && <th>Widget</th>}<th>Aksi</th></tr></thead>
           <tbody>
             {items.map(x => (
               <tr key={x.id}>
+                <td>{x.image_url ? <img src={x.image_url} alt="" style={{ objectFit: 'cover', padding: 0 }} /> : <span className="muted"><Icon name="image" size={20} /></span>}</td>
                 <td className="small">{x.date}</td>
                 <td><b>{x.title || x.name}</b>{x.version ? <span className="ver" style={{ marginLeft: 6 }}>v{x.version}</span> : null}</td>
                 {isPkg && <td>{(x.widget_slugs || []).length}</td>}
                 <td><div className="row-actions">
                   <Link className="btn btn-sm btn-text" href={`/${type}/${x.id}`} target="_blank"><Icon name="eye" size={16} />Lihat</Link>
                   <button className="btn btn-sm" onClick={() => setEdit({ ...x, widget_slugs: x.widget_slugs || [] })}><Icon name="edit" size={16} />Ubah</button>
-                  <button className="btn btn-sm btn-danger" disabled={busy} onClick={() => confirm('Hapus permanen?') && run(() => deleteContent(type, x.id))}><Icon name="delete" size={16} /></button>
+                  <button className="btn btn-sm btn-danger" disabled={busy} onClick={() => confirm(x.image_path ? 'Hapus permanen? Gambar sampulnya juga ikut dihapus.' : 'Hapus permanen?') && run(() => deleteContent(type, x.id))}><Icon name="delete" size={16} /></button>
                 </div></td>
               </tr>
             ))}
-            {!items.length && <tr><td colSpan={4} className="muted">Belum ada data.</td></tr>}
+            {!items.length && <tr><td colSpan={5} className="muted">Belum ada data.</td></tr>}
           </tbody>
         </table>
       </div>
@@ -73,7 +121,7 @@ export default function ContentAdmin({ type, label, items, widgets, openNew }) {
         <div className="backdrop" onClick={e => e.target === e.currentTarget && setEdit(null)}>
           <div className="modal wide">
             <h2>{edit.id ? 'Ubah' : 'Tambah'} {label.toLowerCase()}</h2>
-            <form className="form" onSubmit={e => { e.preventDefault(); run(() => saveContent(type, edit), () => setEdit(null)); }}>
+            <form className="form" onSubmit={e => { e.preventDefault(); save(); }}>
               <div className="row">
                 <label>{isPkg ? 'Nama package' : 'Judul'}<input required value={(isPkg ? edit.name : edit.title) || ''} onChange={set(isPkg ? 'name' : 'title')} /></label>
                 <label>Tanggal<input type="date" required value={edit.date || ''} onChange={set('date')} /></label>
@@ -89,8 +137,8 @@ export default function ContentAdmin({ type, label, items, widgets, openNew }) {
                 </>
               )}
               <label>Isi<span>pisahkan paragraf dengan baris kosong; baris diawali "- " menjadi daftar</span><textarea rows={8} value={edit.body || ''} onChange={set('body')} /></label>
-              <label>Gambar sampul<span>opsional, alamat (URL) gambar</span><input type="url" value={edit.image_url || ''} onChange={set('image_url')} placeholder="https://…" /></label>
-              {isPkg && <label>Widget dalam package<WidgetPicker widgets={widgets} value={edit.widget_slugs} onChange={v => setEdit({ ...edit, widget_slugs: v })} /></label>}
+              <ImageField edit={edit} setEdit={setEdit} />
+              {isPkg && <div className="field">Widget dalam package<WidgetPicker widgets={widgets} value={edit.widget_slugs} onChange={v => setEdit({ ...edit, widget_slugs: v })} /></div>}
               {err && <div className="notice err">{err}</div>}
               <div className="actions" style={{ margin: 0 }}>
                 <button className="btn btn-filled" disabled={busy}><Icon name="check" size={18} />{busy ? 'Menyimpan…' : 'Simpan & tayangkan'}</button>

@@ -3,10 +3,11 @@ import { useState, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
 import Icon from '../Icon';
 import { approvePartner, setPartnerStatus, setRole, createUser, setUserPassword, deleteUser } from '@/lib/admin-actions';
+import { ROLES, ROLE_LABEL, assignableRoles, canManageAccount } from '@/lib/roles';
 
 const EMPTY = { email: '', password: '', full_name: '', company: '', phone: '', role: 'member' };
 
-function AddUser({ busy, onSave, onClose }) {
+function AddUser({ busy, onSave, onClose, roles }) {
   const [u, setU] = useState(EMPTY);
   const set = k => e => setU({ ...u, [k]: e.target.value });
   return (
@@ -21,7 +22,7 @@ function AddUser({ busy, onSave, onClose }) {
             <label>Perusahaan<input value={u.company} onChange={set('company')} /></label>
             <label>No. WhatsApp<input value={u.phone} onChange={set('phone')} placeholder="0812…" /></label>
           </div>
-          <label>Peran<select value={u.role} onChange={set('role')}><option value="member">Member</option><option value="partner">Partner (langsung disetujui)</option><option value="admin">Admin</option></select></label>
+          <label>Peran<select value={u.role} onChange={set('role')}>{roles.map(r => <option key={r} value={r}>{ROLE_LABEL[r]}{r === 'partner' ? ' (langsung disetujui)' : ''}</option>)}</select></label>
           <div className="actions" style={{ justifyContent: 'flex-end', marginBottom: 0 }}>
             <button type="button" className="btn btn-text" onClick={onClose}>Batal</button>
             <button className="btn btn-filled" disabled={busy}><Icon name="add" size={18} />Tambah</button>
@@ -35,6 +36,7 @@ function AddUser({ busy, onSave, onClose }) {
 const STATUS = { pending: 'Menunggu', approved: 'Disetujui', rejected: 'Ditolak' };
 
 export default function PartnerTable({ rows, gateway, canManage, me }) {
+  const roles = assignableRoles(me.role);
   const router = useRouter();
   const [busy, start] = useTransition();
   const [msg, setMsg] = useState(null);
@@ -57,14 +59,14 @@ export default function PartnerTable({ rows, gateway, canManage, me }) {
         </div>
       )}
       {!gateway && <p className="muted small" style={{ marginTop: 0 }}>Notifikasi dikirim dengan membuka WhatsApp Anda. Supaya terkirim otomatis, isi <code>FONNTE_TOKEN</code> di Vercel (lihat tutorial).</p>}
-      {adding && <AddUser busy={busy} onClose={() => setAdding(false)} onSave={u => run(() => createUser(u), () => { setAdding(false); setMsg({ ok: `User ${u.email} dibuat sebagai ${u.role}. Berikan email dan password-nya ke user tersebut.` }); })} />}
+      {adding && <AddUser roles={roles} busy={busy} onClose={() => setAdding(false)} onSave={u => run(() => createUser(u), () => { setAdding(false); setMsg({ ok: `User ${u.email} dibuat sebagai ${ROLE_LABEL[u.role]}. Berikan email dan password-nya ke user tersebut.` }); })} />}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 10, flexWrap: 'wrap', marginBottom: 10 }}>
         {canManage
           ? <button className="btn btn-filled" onClick={() => setAdding(true)}><Icon name="add" size={18} />Tambah user</button>
           : <p className="muted small" style={{ margin: 0 }}>Untuk menambah, reset password, atau menghapus user, isi <code>SUPABASE_SERVICE_ROLE_KEY</code> di Vercel (Settings &gt; Environment Variables), lalu redeploy.</p>}
       </div>
       <div className="filters" style={{ marginBottom: 10 }}>
-        {[['all', 'Semua'], ['pending', 'Menunggu'], ['approved', 'Disetujui'], ['rejected', 'Ditolak'], ['staff', 'Member & admin']].map(([k, l]) => (
+        {[['all', 'Semua'], ['pending', 'Menunggu'], ['approved', 'Disetujui'], ['rejected', 'Ditolak'], ['staff', 'Tim SmartICS']].map(([k, l]) => (
           <button key={k} className={'fchip' + (filter === k ? ' on' : '')} onClick={() => setFilter(k)}>{l} <span className="count">{k === 'all' ? rows.length : k === 'staff' ? rows.filter(r => r.role !== 'partner').length : rows.filter(r => r.status === k).length}</span></button>
         ))}
       </div>
@@ -74,20 +76,22 @@ export default function PartnerTable({ rows, gateway, canManage, me }) {
           <tbody>
             {shown.map(p => (
               <tr key={p.id}>
-                <td><b>{p.full_name || '-'}</b><br /><span className="muted small">{new Date(p.created_at).toLocaleDateString('id-ID')}</span></td>
+                <td><div className="who-cell"><span className="avatar sm">{p.avatar_url ? <img src={p.avatar_url} alt="" /> : (p.full_name || p.email || '?').trim()[0].toUpperCase()}</span><span><b>{p.full_name || '-'}</b>{p.id === me.id ? ' (Anda)' : ''}<br /><span className="muted small">{new Date(p.created_at).toLocaleDateString('id-ID')}</span></span></div></td>
                 <td>{p.company || '-'}</td>
                 <td className="small">{p.email}<br />{p.phone || '-'}</td>
                 <td>
-                  <select value={p.role} disabled={busy || p.id === me} onChange={e => run(() => setRole(p.id, e.target.value))}>
-                    <option value="partner">Partner</option><option value="member">Member</option><option value="admin">Admin</option>
-                  </select>
+                  {p.id !== me.id && canManageAccount(me, p)
+                    ? <select value={p.role} disabled={busy} onChange={e => run(() => setRole(p.id, e.target.value))}>
+                        {ROLES.filter(r => r === p.role || roles.includes(r)).map(r => <option key={r} value={r}>{ROLE_LABEL[r]}</option>)}
+                      </select>
+                    : <span className={'role-chip r-' + p.role} title={p.id === me.id ? 'Peran akun sendiri tidak bisa diubah' : 'Hanya superadmin yang bisa mengubah'}>{ROLE_LABEL[p.role] || p.role}</span>}
                 </td>
                 <td><span className={'status ' + p.status}>{p.role === 'partner' ? STATUS[p.status] : 'Aktif'}</span></td>
                 <td>
                   <div className="row-actions">
                     {p.role === 'partner' && p.status !== 'approved' && <button className="btn btn-filled btn-sm" disabled={busy} onClick={() => approve(p)}><Icon name="check" size={16} />Setujui</button>}
-                    {canManage && <button className="btn btn-sm btn-text" disabled={busy} title="Ganti password" onClick={() => { const pw = prompt(`Password baru untuk ${p.email} (minimal 6 karakter):`); if (pw) run(() => setUserPassword(p.id, pw), () => setMsg({ ok: `Password ${p.email} sudah diganti.` })); }}>Ganti password</button>}
-                    {canManage && p.id !== me && <button className="btn btn-sm btn-text btn-danger btn-icon" disabled={busy} title="Hapus user" onClick={() => confirm(`Hapus akun ${p.email}? Tidak bisa dibatalkan.`) && run(() => deleteUser(p.id), () => setMsg({ ok: `Akun ${p.email} dihapus.` }))}><Icon name="delete" size={18} /></button>}
+                    {canManage && canManageAccount(me, p) && <button className="btn btn-sm btn-text" disabled={busy} title="Ganti password" onClick={() => { const pw = prompt(`Password baru untuk ${p.email} (minimal 6 karakter):`); if (pw) run(() => setUserPassword(p.id, pw), () => setMsg({ ok: `Password ${p.email} sudah diganti.` })); }}>Ganti password</button>}
+                    {canManage && p.id !== me.id && canManageAccount(me, p) && <button className="btn btn-sm btn-text btn-danger btn-icon" disabled={busy} title="Hapus user" onClick={() => confirm(`Hapus akun ${p.email}? Tidak bisa dibatalkan.`) && run(() => deleteUser(p.id), () => setMsg({ ok: `Akun ${p.email} dihapus.` }))}><Icon name="delete" size={18} /></button>}
                     {p.role === 'partner' && p.status !== 'rejected' && <button className="btn btn-sm btn-danger" disabled={busy} onClick={() => confirm(`Tolak / cabut akses ${p.full_name}?`) && run(() => setPartnerStatus(p.id, 'rejected'))}><Icon name="close" size={16} />{p.status === 'approved' ? 'Cabut' : 'Tolak'}</button>}
                   </div>
                 </td>
