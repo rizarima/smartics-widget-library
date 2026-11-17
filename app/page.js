@@ -66,7 +66,7 @@ export default async function Dashboard() {
                   <div className="pkg-top"><span className="tone tone-blue" style={{ width: 40, height: 40, borderRadius: 12 }}><Icon name="package" /></span>{p.version && <span className="ver">v{p.version}</span>}</div>
                   <b>{p.name}</b>
                   <span className="muted small">{excerpt(p.description || p.body, 100)}</span>
-                  <div className="chips">{p.count ? <span className="chip">{t('nWidgets', { n: p.count })}</span> : null}{p.template && <span className="chip">{templateName(lang, p.template).split(' - ')[0]}</span>}<span className="chip">{fmtDateL(lang, p.date)}</span></div>
+                  <div className="chips">{p.count ? <span className="chip">{t('nWidgets', { n: p.count })}</span> : null}{p.template && <span className="chip">{templateName(lang, p.template).split(' - ')[1] || templateName(lang, p.template)}</span>}<span className="chip">{fmtDateL(lang, p.date)}</span></div>
                 </Link>
               ))}
             </div>

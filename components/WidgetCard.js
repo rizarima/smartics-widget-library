@@ -15,7 +15,7 @@ export default function WidgetCard({ w, lang = 'id' }) {
         <span className="muted small">{w.kind}</span>
         <div className="chips">
           {w.categories.slice(0, 2).map(c => <span key={c} className="chip">{c}</span>)}
-          <span className={'chip t' + ((w.template || '').match(/Template (\d)/)?.[1] || '1')}>{templateName(lang, w.template || '').split(' - ')[0]}</span>
+          <span className={'chip t' + ((w.template || '').match(/Template (\d)/)?.[1] || '1')}>{templateName(lang, w.template || '').split(' - ')[1] || templateName(lang, w.template || '')}</span>
         </div>
       </div>
     </Link>
